@@ -167,30 +167,53 @@
 </head>
 <body>
 
-<!-- cute carrot mascot (original) -->
+<!-- cute sprout mascot (original) — white mochi body + carrot-top sprout + thumbs up -->
 <svg width="0" height="0" style="position:absolute"><defs>
-  <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a4d"/><stop offset="1" stop-color="#f0531b"/></linearGradient>
-  <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#69cf76"/><stop offset="1" stop-color="#3e9e58"/></linearGradient>
-  <radialGradient id="cheek" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb38a"/><stop offset="1" stop-color="#ffb38a" stop-opacity="0"/></radialGradient>
-  <g id="carrot">
-    <ellipse cx="60" cy="120" rx="30" ry="8" fill="#e9b48f" opacity=".35"/>
-    <path d="M60 26 C82 40 90 78 74 112 C68 124 52 124 46 112 C30 78 38 40 60 26 Z" fill="url(#body)"/>
-    <path d="M52 50 q10 3 16 1 M50 66 q12 4 20 1 M52 82 q9 3 15 1 M54 96 q7 2 11 0" stroke="#d6480f" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
-    <path d="M60 30 C56 12 44 8 36 12 C48 16 48 26 56 34 Z" fill="url(#leaf)"/>
-    <path d="M60 30 C64 10 78 6 87 11 C74 15 74 25 64 34 Z" fill="url(#leaf)"/>
-    <path d="M60 28 C58 10 62 2 66 0 C66 12 66 20 62 32 Z" fill="#5cc06b"/>
-    <circle cx="52" cy="64" r="4.6" fill="#3a2a1e"/>
-    <circle cx="68" cy="64" r="4.6" fill="#3a2a1e"/>
-    <circle cx="53.6" cy="62.2" r="1.5" fill="#fff"/>
-    <circle cx="69.6" cy="62.2" r="1.5" fill="#fff"/>
-    <ellipse cx="45" cy="74" rx="6" ry="4.5" fill="url(#cheek)"/>
-    <ellipse cx="75" cy="74" rx="6" ry="4.5" fill="url(#cheek)"/>
-    <path d="M54 75 q6 6 12 0" stroke="#3a2a1e" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fdeadd"/></linearGradient>
+  <linearGradient id="leafG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#74d182"/><stop offset="1" stop-color="#3e9e58"/></linearGradient>
+  <radialGradient id="cheekG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb38a"/><stop offset="1" stop-color="#ffb38a" stop-opacity="0"/></radialGradient>
+
+  <!-- full mascot doing thumbs up (hero) -->
+  <g id="mascot">
+    <ellipse cx="100" cy="200" rx="52" ry="11" fill="#e7a574" opacity=".28"/>
+    <!-- sprout -->
+    <path d="M100 70 C92 40 74 34 64 40 C80 46 80 62 96 76 Z" fill="url(#leafG)"/>
+    <path d="M100 70 C108 38 128 32 139 39 C122 45 122 61 104 76 Z" fill="url(#leafG)"/>
+    <path d="M100 68 C97 38 101 26 106 24 C106 44 106 56 102 74 Z" fill="#5cc06b"/>
+    <!-- right arm raised (thumbs up) -->
+    <path d="M150 150 C168 138 176 120 172 108" stroke="#fdeadd" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <g transform="translate(170 104)">
+      <circle r="15" fill="url(#bodyG)" stroke="#f3d8c4" stroke-width="1.5"/>
+      <rect x="-4" y="-22" width="9" height="16" rx="4.5" fill="url(#bodyG)" stroke="#f3d8c4" stroke-width="1.5"/>
+    </g>
+    <!-- left arm -->
+    <path d="M52 150 C40 162 38 176 42 184" stroke="#fdeadd" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <circle cx="44" cy="186" r="13" fill="url(#bodyG)" stroke="#f3d8c4" stroke-width="1.5"/>
+    <!-- body -->
+    <ellipse cx="100" cy="135" rx="64" ry="62" fill="url(#bodyG)" stroke="#f3d8c4" stroke-width="1.5"/>
+    <!-- face -->
+    <ellipse cx="82" cy="128" rx="6.5" ry="8" fill="#3a2a1e"/>
+    <ellipse cx="118" cy="128" rx="6.5" ry="8" fill="#3a2a1e"/>
+    <circle cx="84" cy="124.5" r="2.1" fill="#fff"/>
+    <circle cx="120" cy="124.5" r="2.1" fill="#fff"/>
+    <ellipse cx="68" cy="143" rx="9" ry="6.5" fill="url(#cheekG)"/>
+    <ellipse cx="132" cy="143" rx="9" ry="6.5" fill="url(#cheekG)"/>
+    <path d="M91 142 q9 9 18 0" stroke="#3a2a1e" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- simple mark (logo/footer) -->
+  <g id="mark">
+    <path d="M30 30 C26 16 17 12 11 15 C20 18 20 27 28 34 Z" fill="url(#leafG)"/>
+    <path d="M30 30 C34 15 44 11 50 14 C41 17 41 26 32 34 Z" fill="url(#leafG)"/>
+    <ellipse cx="30" cy="44" rx="22" ry="21" fill="url(#bodyG)" stroke="#f3d8c4" stroke-width="1.5"/>
+    <ellipse cx="24" cy="42" rx="2.6" ry="3.2" fill="#3a2a1e"/>
+    <ellipse cx="36" cy="42" rx="2.6" ry="3.2" fill="#3a2a1e"/>
+    <path d="M26 48 q4 4 8 0" stroke="#3a2a1e" stroke-width="2" fill="none" stroke-linecap="round"/>
   </g>
 </defs></svg>
 
 <nav id="nav"><div class="wrap nav-in">
-  <div class="logo round-font"><svg viewBox="0 0 120 130"><use href="#carrot"/></svg> 당근부스트</div>
+  <div class="logo round-font"><svg viewBox="0 0 60 70"><use href="#mark"/></svg> 당근부스트</div>
   <a href="#apply" class="nav-cta">무료 진단 신청</a>
 </div></nav>
 
@@ -212,7 +235,7 @@
     </div>
     <div class="hero-art">
       <div class="blob"></div>
-      <svg class="mascot" viewBox="0 0 120 130"><use href="#carrot"/></svg>
+      <svg class="mascot" viewBox="0 0 200 220"><use href="#mascot"/></svg>
       <div class="pill one"><span class="dot"></span> 비즈프로필 100%</div>
       <div class="pill two"><span class="em">📈</span> 단골 +37%</div>
     </div>
@@ -293,7 +316,7 @@
 </section>
 
 <footer><div class="wrap foot-in">
-  <div class="logo round-font" style="font-size:17px"><svg viewBox="0 0 120 130"><use href="#carrot"/></svg> 당근부스트 <span style="color:var(--muted);font-weight:400;font-family:Pretendard">by ROUND COMPANY</span></div>
+  <div class="logo round-font" style="font-size:17px"><svg viewBox="0 0 60 70"><use href="#mark"/></svg> 당근부스트 <span style="color:var(--muted);font-weight:400;font-family:Pretendard">by ROUND COMPANY</span></div>
   <div>© 2026 ROUND COMPANY · 동네 장사 당근마케팅</div>
 </div></footer>
 
