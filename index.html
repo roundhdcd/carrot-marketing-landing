@@ -196,13 +196,23 @@
   @media(max-width:560px){.unit-grid{grid-template-columns:1fr 1fr}}
 
   /* promise */
-  .promise-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:46px}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}
   .promise-card{background:var(--cream);border-radius:22px;padding:26px 18px;text-align:center;transition:.25s;border:1.5px solid var(--cream2)}
   .promise-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(214,95,12,.12);background:#fff}
   .promise-ic{font-size:32px;margin-bottom:12px}
   .promise-card h4{font-size:14.5px;font-weight:800;margin-bottom:9px;line-height:1.5}
   .promise-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.65}
   .promise-close{text-align:center;margin-top:52px;font-size:clamp(20px,2.6vw,28px);font-weight:800;line-height:1.55;color:var(--ink)}
+
+  /* chart */
+  .chart-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+  .chart-card{background:#fff;border-radius:22px;padding:22px 20px;box-shadow:0 8px 24px rgba(214,95,12,.07);border:1.5px solid var(--cream2)}
+  .chart-lbl{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:3px}
+  .chart-stat{font-size:20px;font-weight:800;color:var(--orange-deep);font-family:'Cafe24Ssurround',Pretendard,sans-serif;margin-bottom:14px}
+  .chart-svg{width:100%;height:72px;overflow:visible}
+  .c-line{stroke-dasharray:280;stroke-dashoffset:280;transition:stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)}
+  .c-line.go{stroke-dashoffset:0}
+  .chart-x{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:5px}
 
   /* kakao */
   .kakao-btn{background:#FEE500;color:#3C1E1E;box-shadow:0 10px 24px rgba(254,229,0,.38)}
@@ -221,15 +231,15 @@
   .ravg-n span{font-size:65%;color:var(--orange)}
   .ravg-l{font-size:13.5px;font-weight:700;margin:10px 0 4px}
   .ravg-sub{font-size:12px;color:var(--muted);line-height:1.5}
-  .result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+  .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
   .result-card{background:#fff;border-radius:20px;padding:20px 16px;border:1.5px solid var(--cream2);transition:.25s;text-align:center}
   .result-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(214,95,12,.12)}
   .rc-tag{display:inline-block;font-size:11px;font-weight:800;color:var(--orange);background:var(--cream);border-radius:999px;padding:3px 11px;margin-bottom:10px}
   .rc-big{font-size:clamp(26px,3vw,36px);color:var(--orange-deep);line-height:1;font-weight:800;font-family:'Cafe24Ssurround',Pretendard,sans-serif}
   .rc-sub{font-size:12px;font-weight:700;color:var(--ink);margin:7px 0 4px}
   .rc-detail{font-size:11.5px;color:var(--muted);line-height:1.5}
-  @media(max-width:880px){.result-avg{grid-template-columns:repeat(2,1fr)}.result-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.result-avg{grid-template-columns:1fr 1fr}.result-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:880px){.result-avg{grid-template-columns:repeat(2,1fr)}.result-grid{grid-template-columns:repeat(2,1fr)}.chart-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.result-avg{grid-template-columns:1fr 1fr}.result-grid{grid-template-columns:1fr 1fr}.promise-grid{grid-template-columns:1fr 1fr}}
 
   @media(max-width:880px){
     .hero{grid-template-columns:1fr;gap:30px;text-align:center}
@@ -512,6 +522,11 @@
         <h4>전담 담당자<br>1:1 소통</h4>
         <p>카톡으로 편하게 연락주시면<br>담당자가 빠르게 응대합니다.</p>
       </div>
+      <div class="promise-card reveal">
+        <div class="promise-ic">🎯</div>
+        <h4>업종·동네<br>맞춤 전략</h4>
+        <p>처음부터 우리 가게에 맞는 방식으로만<br>설계하고 진행합니다.</p>
+      </div>
     </div>
     <div class="promise-close reveal">
       단골이 생기는 경험,<br><span class="o">한 번은 해봐야 압니다.</span>
@@ -549,6 +564,43 @@
         <div class="ravg-sub">단골 관리 세팅 이후</div>
       </div>
     </div>
+    <!-- 애니메이션 그래프 -->
+    <div class="chart-grid">
+      <div class="chart-card reveal">
+        <div class="chart-lbl">헬스장 · 월별 문의량</div>
+        <div class="chart-stat">25명 → 115명</div>
+        <svg class="chart-svg" viewBox="0 0 240 65" preserveAspectRatio="none">
+          <defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6F34" stop-opacity=".18"/><stop offset="1" stop-color="#FF6F34" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,58 L48,56 L96,50 L144,36 L192,16 L240,4 L240,65 L0,65 Z" fill="url(#cg1)"/>
+          <path class="c-line" d="M0,58 L48,56 L96,50 L144,36 L192,16 L240,4" fill="none" stroke="#FF6F34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="240" cy="4" r="4" fill="#FF6F34"/>
+        </svg>
+        <div class="chart-x"><span>10월</span><span>11월</span><span>12월</span><span>1월</span><span>2월</span><span>3월</span></div>
+      </div>
+      <div class="chart-card reveal">
+        <div class="chart-lbl">사주 · 월별 문의량</div>
+        <div class="chart-stat">7명 → 145명</div>
+        <svg class="chart-svg" viewBox="0 0 240 65" preserveAspectRatio="none">
+          <defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6F34" stop-opacity=".18"/><stop offset="1" stop-color="#FF6F34" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,63 L48,61 L96,55 L144,42 L192,20 L240,3 L240,65 L0,65 Z" fill="url(#cg2)"/>
+          <path class="c-line" d="M0,63 L48,61 L96,55 L144,42 L192,20 L240,3" fill="none" stroke="#FF6F34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="240" cy="3" r="4" fill="#FF6F34"/>
+        </svg>
+        <div class="chart-x"><span>10월</span><span>11월</span><span>12월</span><span>1월</span><span>2월</span><span>3월</span></div>
+      </div>
+      <div class="chart-card reveal">
+        <div class="chart-lbl">입주청소 · 월별 문의량</div>
+        <div class="chart-stat">20명 → 79명</div>
+        <svg class="chart-svg" viewBox="0 0 240 65" preserveAspectRatio="none">
+          <defs><linearGradient id="cg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6F34" stop-opacity=".18"/><stop offset="1" stop-color="#FF6F34" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,56 L48,60 L96,52 L144,44 L192,14 L240,7 L240,65 L0,65 Z" fill="url(#cg3)"/>
+          <path class="c-line" d="M0,56 L48,60 L96,52 L144,44 L192,14 L240,7" fill="none" stroke="#FF6F34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="240" cy="7" r="4" fill="#FF6F34"/>
+        </svg>
+        <div class="chart-x"><span>10월</span><span>11월</span><span>12월</span><span>1월</span><span>2월</span><span>3월</span></div>
+      </div>
+    </div>
+
     <div class="result-grid" style="margin-top:28px">
       <div class="result-card reveal">
         <div class="rc-tag">헬스장</div>
@@ -580,6 +632,12 @@
         <div class="rc-sub">매출 상승 · 70일</div>
         <div class="rc-detail">방문자 1,960명<br>전환 14.2배</div>
       </div>
+      <div class="result-card reveal">
+        <div class="rc-tag">입주청소</div>
+        <div class="rc-big">299%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 1,834명<br>전환 5.2배</div>
+      </div>
     </div>
     <p style="text-align:center;margin-top:20px;font-size:12.5px;color:var(--muted)">입주청소·이사·인테리어·방충망·줄눈·타일 등 12개 업종 실제 데이터 · 업종별 결과는 상이할 수 있습니다</p>
   </div>
@@ -604,7 +662,7 @@
   </div>
 </section>
 
-<section id="apply" style="padding-top:0">
+<section id="apply" style="padding-top:72px">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow">APPLY</span>
@@ -650,6 +708,8 @@
     const tick=()=>{n+=step;if(n>=t){el.textContent=t}else{el.textContent=n;requestAnimationFrame(tick)}};tick();cio.unobserve(el);
   }),{threshold:.6});
   document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+const chartObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.c-line').forEach(l=>l.classList.add('go'))}),{threshold:.4});
+document.querySelectorAll('.chart-card').forEach(c=>chartObs.observe(c));
 document.querySelectorAll('.faq-q').forEach(q=>{
     q.addEventListener('click',()=>{
       const item=q.parentElement;
