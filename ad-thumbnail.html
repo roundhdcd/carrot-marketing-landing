@@ -2,43 +2,126 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>
-  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:600px;height:600px;overflow:hidden;background:#1a0f0a;font-family:Pretendard,sans-serif;display:flex;align-items:center;justify-content:center}
-  .wrap{width:600px;height:600px;position:relative;display:flex;flex-direction:column;justify-content:center;padding:52px 48px;background:linear-gradient(140deg,#1a0f0a 0%,#2d1507 60%,#1a0f0a 100%)}
-  .bg-circle{position:absolute;border-radius:50%;background:radial-gradient(circle,#FF6F34 0%,transparent 70%);opacity:.22}
-  .c1{width:400px;height:400px;top:-120px;right:-80px}
-  .c2{width:280px;height:280px;bottom:-60px;left:-60px;opacity:.12}
-  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,111,52,.2);border:1.5px solid rgba(255,111,52,.5);color:#FF6F34;font-size:15px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:22px;position:relative;z-index:2}
-  .main{font-size:52px;font-weight:900;color:#fff;line-height:1.18;letter-spacing:-.02em;position:relative;z-index:2}
-  .main .o{color:#FF6F34}
-  .sub{font-size:18px;color:rgba(255,255,255,.7);margin-top:16px;line-height:1.6;position:relative;z-index:2}
-  .stat-row{display:flex;gap:20px;margin-top:32px;position:relative;z-index:2}
-  .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,111,52,.3);border-radius:14px;padding:12px 18px;text-align:center}
-  .stat .n{font-size:24px;font-weight:800;color:#FF6F34}
-  .stat .l{font-size:12px;color:rgba(255,255,255,.6);margin-top:3px}
-  .bottom{position:absolute;bottom:40px;left:48px;right:48px;z-index:2;display:flex;justify-content:space-between;align-items:center}
-  .brand{font-size:18px;font-weight:800;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
-  .cta{background:#FF6F34;color:#fff;font-size:16px;font-weight:800;padding:12px 24px;border-radius:999px}
+  body{font-family:Pretendard,sans-serif;background:#e8e8e8;display:flex;flex-direction:column;gap:32px;padding:40px;align-items:center}
+  .label{font-size:18px;font-weight:800;color:#555;text-align:center;margin-bottom:8px}
+  .thumb{width:600px;height:600px;position:relative;overflow:hidden;flex-shrink:0}
+
+  /* ── 버전 1: 크림 랜딩페이지 스타일 ── */
+  .v1{background:#FFF5EC}
+  .v1 .deco1{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#FFE1C8,transparent 70%);top:-80px;right:-80px}
+  .v1 .deco2{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,#FFE1C8,transparent 70%);bottom:-60px;left:-40px}
+  .v1 .inner{position:relative;z-index:2;padding:52px 50px;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .v1 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #FFD4B2;color:#F0531B;font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:24px;width:fit-content}
+  .v1 .main{font-size:50px;font-weight:900;color:#2c2620;line-height:1.18;letter-spacing:-.02em}
+  .v1 .main .o{color:#FF6F34}
+  .v1 .sub{font-size:17px;color:#5c534a;margin-top:16px;line-height:1.65}
+  .v1 .stats{display:flex;gap:14px;margin-top:28px}
+  .v1 .s{background:#fff;border-radius:16px;padding:14px 18px;text-align:center;box-shadow:0 8px 20px rgba(214,95,12,.1);border:1px solid #FFE9D6}
+  .v1 .s .n{font-size:22px;font-weight:800;color:#F0531B}
+  .v1 .s .l{font-size:11px;color:#9a8f84;margin-top:2px}
+  .v1 .bottom{position:absolute;bottom:40px;left:50px;right:50px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+  .v1 .brand{font-size:17px;font-weight:800;color:#c47840}
+  .v1 .cta{background:#FF6F34;color:#fff;font-size:15px;font-weight:800;padding:13px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(255,111,52,.35)}
+
+  /* ── 버전 2: 주황 풀 배경 ── */
+  .v2{background:linear-gradient(145deg,#FF7A40 0%,#F0531B 55%,#D93D00 100%)}
+  .v2 .deco{position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+  .v2 .d1{width:380px;height:380px;top:-120px;right:-100px}
+  .v2 .d2{width:240px;height:240px;bottom:-80px;left:-60px}
+  .v2 .inner{position:relative;z-index:2;padding:52px 50px;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .v2 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);color:#fff;font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:24px;width:fit-content;border:1.5px solid rgba(255,255,255,.3)}
+  .v2 .main{font-size:50px;font-weight:900;color:#fff;line-height:1.18;letter-spacing:-.02em}
+  .v2 .main .highlight{background:rgba(255,255,255,.18);border-radius:10px;padding:0 8px}
+  .v2 .sub{font-size:17px;color:rgba(255,255,255,.88);margin-top:16px;line-height:1.65}
+  .v2 .stats{display:flex;gap:14px;margin-top:28px}
+  .v2 .s{background:rgba(255,255,255,.14);border-radius:16px;padding:14px 18px;text-align:center;border:1px solid rgba(255,255,255,.25)}
+  .v2 .s .n{font-size:22px;font-weight:800;color:#fff}
+  .v2 .s .l{font-size:11px;color:rgba(255,255,255,.75);margin-top:2px}
+  .v2 .bottom{position:absolute;bottom:40px;left:50px;right:50px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+  .v2 .brand{font-size:17px;font-weight:800;color:rgba(255,255,255,.65)}
+  .v2 .cta{background:#fff;color:#F0531B;font-size:15px;font-weight:800;padding:13px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+
+  /* ── 버전 3: 임팩트 숫자 강조 ── */
+  .v3{background:#fff}
+  .v3 .top-bar{position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(90deg,#FF6F34,#F0531B)}
+  .v3 .inner{padding:52px 50px;height:100%;display:flex;flex-direction:column;justify-content:center;position:relative}
+  .v3 .badge{display:inline-flex;align-items:center;gap:8px;background:#FFF5EC;color:#F0531B;font-size:14px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:20px;width:fit-content;border:1.5px solid #FFD4B2}
+  .v3 .big-n{font-size:96px;font-weight:900;color:#FF6F34;line-height:1;letter-spacing:-.03em}
+  .v3 .big-sub{font-size:20px;font-weight:700;color:#5c534a;margin-top:6px}
+  .v3 .divider{width:56px;height:4px;background:#FF6F34;border-radius:4px;margin:22px 0}
+  .v3 .main{font-size:32px;font-weight:900;color:#2c2620;line-height:1.3;letter-spacing:-.01em}
+  .v3 .sub{font-size:16px;color:#9a8f84;margin-top:12px;line-height:1.6}
+  .v3 .bottom{position:absolute;bottom:40px;left:50px;right:50px;display:flex;justify-content:space-between;align-items:center}
+  .v3 .brand{font-size:17px;font-weight:800;color:#c47840}
+  .v3 .cta{background:#FF6F34;color:#fff;font-size:15px;font-weight:800;padding:13px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(255,111,52,.35)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="bg-circle c1"></div>
-  <div class="bg-circle c2"></div>
-  <div class="tag">🥕 당근마케팅 대행</div>
-  <div class="main">당근 맡기니까<br><span class="o">단골이</span> 생겼습니다.</div>
-  <div class="sub">사장님은 본업에만 집중하세요.<br>당근 운영은 저희가 합니다.</div>
-  <div class="stat-row">
-    <div class="stat"><div class="n">+320%</div><div class="l">평균 매출 상승</div></div>
-    <div class="stat"><div class="n">5배</div><div class="l">문의 전환율</div></div>
-    <div class="stat"><div class="n">24h</div><div class="l">세팅 완료</div></div>
-  </div>
-  <div class="bottom">
-    <div class="brand">🥕 당근부스트</div>
-    <div class="cta">무료 진단 받기</div>
+
+<div>
+  <div class="label">버전 1 — 크림 (랜딩페이지 스타일)</div>
+  <div class="thumb v1">
+    <div class="deco1"></div><div class="deco2"></div>
+    <div class="inner">
+      <div class="badge">🥕 당근마케팅 대행</div>
+      <div class="main">당근 맡기니까<br><span class="o">단골이</span> 생겼습니다.</div>
+      <div class="sub">사장님은 본업에만 집중하세요.<br>당근 운영은 저희가 합니다.</div>
+      <div class="stats">
+        <div class="s"><div class="n">+320%</div><div class="l">평균 매출 상승</div></div>
+        <div class="s"><div class="n">5배</div><div class="l">문의 전환율</div></div>
+        <div class="s"><div class="n">24h</div><div class="l">세팅 완료</div></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="brand">🥕 당근부스트</div>
+      <div class="cta">무료 진단 받기</div>
+    </div>
   </div>
 </div>
+
+<div>
+  <div class="label">버전 2 — 주황 풀배경</div>
+  <div class="thumb v2">
+    <div class="deco d1"></div><div class="deco d2"></div>
+    <div class="inner">
+      <div class="badge">🥕 당근마케팅 대행</div>
+      <div class="main">당근 맡기니까<br><span class="highlight">단골이</span> 생겼습니다.</div>
+      <div class="sub">사장님은 본업에만 집중하세요.<br>당근 운영은 저희가 합니다.</div>
+      <div class="stats">
+        <div class="s"><div class="n">+320%</div><div class="l">평균 매출 상승</div></div>
+        <div class="s"><div class="n">5배</div><div class="l">문의 전환율</div></div>
+        <div class="s"><div class="n">24h</div><div class="l">세팅 완료</div></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="brand">🥕 당근부스트</div>
+      <div class="cta">무료 진단 받기</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">버전 3 — 숫자 임팩트</div>
+  <div class="thumb v3">
+    <div class="top-bar"></div>
+    <div class="inner">
+      <div class="badge">🥕 당근마케팅 대행 · 실제 성과</div>
+      <div class="big-n">+320%</div>
+      <div class="big-sub">12개 업종 평균 매출 상승</div>
+      <div class="divider"></div>
+      <div class="main">당근 맡기니까<br>단골이 생겼습니다.</div>
+      <div class="sub">사장님은 본업에만 집중하세요.</div>
+    </div>
+    <div class="bottom">
+      <div class="brand">🥕 당근부스트</div>
+      <div class="cta">무료 진단 받기</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
