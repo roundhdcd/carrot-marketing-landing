@@ -214,15 +214,22 @@
   .closing-urgent{font-size:14px;font-weight:700;color:var(--orange);letter-spacing:.06em;margin-bottom:18px}
   .closing-big{font-size:clamp(26px,3.8vw,44px);line-height:1.28;letter-spacing:-.02em;font-weight:800}
 
-  /* reviews */
-  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-  .review-card{background:#fff;border-radius:22px;padding:28px 24px;box-shadow:0 10px 30px rgba(214,95,12,.07);border:1px solid var(--cream2);display:flex;flex-direction:column}
-  .review-stars{color:#f5a623;font-size:15px;letter-spacing:2px;margin-bottom:14px}
-  .review-text{font-size:15px;color:var(--ink);line-height:1.8;flex:1;margin-bottom:20px}
-  .review-who{display:flex;align-items:center;gap:10px;margin-top:auto}
-  .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-  .review-name{font-size:14px;font-weight:700}
-  .review-role{font-size:12.5px;color:var(--muted)}
+  /* real results */
+  .result-avg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+  .ravg-card{background:#fff;border-radius:22px;padding:26px 18px;text-align:center;box-shadow:0 8px 24px rgba(214,95,12,.07);border:1.5px solid var(--cream2)}
+  .ravg-n{font-size:clamp(30px,3.8vw,44px);color:var(--orange-deep);line-height:1;font-weight:800;font-family:'Cafe24Ssurround',Pretendard,sans-serif}
+  .ravg-n span{font-size:65%;color:var(--orange)}
+  .ravg-l{font-size:13.5px;font-weight:700;margin:10px 0 4px}
+  .ravg-sub{font-size:12px;color:var(--muted);line-height:1.5}
+  .result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+  .result-card{background:#fff;border-radius:20px;padding:20px 16px;border:1.5px solid var(--cream2);transition:.25s;text-align:center}
+  .result-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(214,95,12,.12)}
+  .rc-tag{display:inline-block;font-size:11px;font-weight:800;color:var(--orange);background:var(--cream);border-radius:999px;padding:3px 11px;margin-bottom:10px}
+  .rc-big{font-size:clamp(26px,3vw,36px);color:var(--orange-deep);line-height:1;font-weight:800;font-family:'Cafe24Ssurround',Pretendard,sans-serif}
+  .rc-sub{font-size:12px;font-weight:700;color:var(--ink);margin:7px 0 4px}
+  .rc-detail{font-size:11.5px;color:var(--muted);line-height:1.5}
+  @media(max-width:880px){.result-avg{grid-template-columns:repeat(2,1fr)}.result-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.result-avg{grid-template-columns:1fr 1fr}.result-grid{grid-template-columns:1fr 1fr}}
 
   @media(max-width:880px){
     .hero{grid-template-columns:1fr;gap:30px;text-align:center}
@@ -512,40 +519,69 @@
   </div>
 </section>
 
-<!-- 후기 섹션 -->
+<!-- 실제 성과 섹션 -->
 <section style="background:var(--cream)">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">REVIEW</span>
-      <h2 class="round-font">사장님들의 <span class="o">이야기</span></h2>
-      <p class="lead">시작 전엔 다들 반신반의했습니다.</p>
+      <span class="eyebrow">REAL RESULTS</span>
+      <h2 class="round-font">실제 데이터로 <span class="o">말합니다</span></h2>
+      <p class="lead">10개 업종, 70일 추적 평균 수치입니다.<br>한달 20명이던 프로필이 달라집니다.</p>
     </div>
-    <div class="review-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"처음엔 반신반의했는데 진단 받고 보니 왜 손님이 안 오는지 바로 보이더라고요. 월 관리 시작하고 한 달 만에 단골이 눈에 띄게 늘었어요."</p>
-        <div class="review-who">
-          <div class="review-avatar">🍜</div>
-          <div><div class="review-name">박*준 사장님</div><div class="review-role">강남구 · 냉면집</div></div>
-        </div>
+    <div class="result-avg">
+      <div class="ravg-card reveal">
+        <div class="ravg-n">1,600<span>명+</span></div>
+        <div class="ravg-l">70일 프로필 방문자</div>
+        <div class="ravg-sub">하루 50명 이상으로</div>
       </div>
-      <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"비즈프로필이 텅 빈 상태였는데 일주일 만에 싹 채워주셨어요. 끌올도 알아서 해주시니까 이제 당근 신경 쓸 필요가 없어요."</p>
-        <div class="review-who">
-          <div class="review-avatar">✂️</div>
-          <div><div class="review-name">이*경 원장님</div><div class="review-role">은평구 · 헤어샵</div></div>
-        </div>
+      <div class="ravg-card reveal">
+        <div class="ravg-n">+310<span>%</span></div>
+        <div class="ravg-l">평균 매출 상승률</div>
+        <div class="ravg-sub">노출 구조 개선 후</div>
       </div>
-      <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"다른 업체도 써봤는데 당근은 여기가 제일 체계적이에요. 후기 5건이 일주일 만에 다 달리더니 예약 문의도 확 늘었어요."</p>
-        <div class="review-who">
-          <div class="review-avatar">🍗</div>
-          <div><div class="review-name">최*민 사장님</div><div class="review-role">마포구 · 치킨집</div></div>
-        </div>
+      <div class="ravg-card reveal">
+        <div class="ravg-n">5<span>배</span></div>
+        <div class="ravg-l">문의 전환율</div>
+        <div class="ravg-sub">후기+프로필 신뢰도 개선</div>
+      </div>
+      <div class="ravg-card reveal">
+        <div class="ravg-n">62<span>%</span></div>
+        <div class="ravg-l">단골·재구매 비율</div>
+        <div class="ravg-sub">단골 관리 세팅 이후</div>
       </div>
     </div>
+    <div class="result-grid" style="margin-top:28px">
+      <div class="result-card reveal">
+        <div class="rc-tag">헬스장</div>
+        <div class="rc-big">410%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 2,360명<br>전환 5.7배</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="rc-tag">도배장판</div>
+        <div class="rc-big">355%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 1,911명<br>전환 4.9배</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="rc-tag">에어컨청소</div>
+        <div class="rc-big">340%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 1,730명<br>전환 5.0배</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="rc-tag">블라인드</div>
+        <div class="rc-big">325%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 1,970명<br>전환 4.6배</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="rc-tag">법률사무소</div>
+        <div class="rc-big">310%</div>
+        <div class="rc-sub">매출 상승 · 70일</div>
+        <div class="rc-detail">방문자 1,620명<br>전환 5.3배</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:12.5px;color:var(--muted)">입주청소·이사·인테리어·방충망·타일 등 10개 업종 실제 데이터 · 업종별 결과는 상이할 수 있습니다</p>
   </div>
 </section>
 
