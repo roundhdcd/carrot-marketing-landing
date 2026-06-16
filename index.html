@@ -154,7 +154,7 @@
   .faq-item{border-bottom:1.5px solid var(--cream2)}
   .faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 4px;cursor:pointer;font-size:16px;font-weight:700;gap:16px;user-select:none}
   .faq-ic{width:30px;height:30px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;transition:.25s;font-style:normal;line-height:1}
-  .faq-item.open .faq-ic{background:var(--orange);color:#fff;transform:rotate(45deg)}
+  .faq-item.open .faq-ic{background:var(--cream2);color:var(--ink)}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease,padding .38s;color:var(--ink-soft);font-size:15px;line-height:1.78;padding:0 4px}
   .faq-item.open .faq-a{max-height:260px;padding-bottom:22px}
 
@@ -499,8 +499,8 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     q.addEventListener('click',()=>{
       const item=q.parentElement;
       const wasOpen=item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-      if(!wasOpen)item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ic').textContent='+'});
+      if(!wasOpen){item.classList.add('open');item.querySelector('.faq-ic').textContent='−'}
     });
   });
 </script>
