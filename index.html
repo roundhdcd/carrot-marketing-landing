@@ -195,6 +195,25 @@
   @media(max-width:880px){.unit-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.unit-grid{grid-template-columns:1fr 1fr}}
 
+  /* promise */
+  .promise-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:46px}
+  .promise-card{background:var(--cream);border-radius:22px;padding:26px 18px;text-align:center;transition:.25s;border:1.5px solid var(--cream2)}
+  .promise-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(214,95,12,.12);background:#fff}
+  .promise-ic{font-size:32px;margin-bottom:12px}
+  .promise-card h4{font-size:14.5px;font-weight:800;margin-bottom:9px;line-height:1.5}
+  .promise-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.65}
+  .promise-close{text-align:center;margin-top:52px;font-size:clamp(20px,2.6vw,28px);font-weight:800;line-height:1.55;color:var(--ink)}
+
+  /* reviews */
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .review-card{background:#fff;border-radius:22px;padding:28px 24px;box-shadow:0 10px 30px rgba(214,95,12,.07);border:1px solid var(--cream2);display:flex;flex-direction:column}
+  .review-stars{color:#f5a623;font-size:15px;letter-spacing:2px;margin-bottom:14px}
+  .review-text{font-size:15px;color:var(--ink);line-height:1.8;flex:1;margin-bottom:20px}
+  .review-who{display:flex;align-items:center;gap:10px;margin-top:auto}
+  .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .review-name{font-size:14px;font-weight:700}
+  .review-role{font-size:12.5px;color:var(--muted)}
+
   @media(max-width:880px){
     .hero{grid-template-columns:1fr;gap:30px;text-align:center}
     .hero .badge,.hero .cta-row{justify-content:center}
@@ -202,12 +221,15 @@
     .hero-art{order:-1;min-height:300px}
     .grid,.steps{grid-template-columns:1fr 1fr}
     nav .nav-cta{display:none}
+    .promise-grid{grid-template-columns:repeat(3,1fr)}
+    .review-grid{grid-template-columns:1fr}
   }
   @media(max-width:560px){
     .trust-in{grid-template-columns:1fr;gap:12px}
     .grid,.steps{grid-template-columns:1fr}
     .band{padding:40px 22px}
     header{padding:120px 0 60px}
+    .promise-grid{grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
@@ -439,14 +461,80 @@
   </div>
 </section>
 
-<section>
+<!-- 약속 섹션 -->
+<section style="background:#fff">
   <div class="wrap">
-    <div class="band reveal">
-      <span class="c c1"></span><span class="c c2"></span>
-      <span class="eyebrow">START TODAY</span>
-      <h2 class="round-font">지금 신청하면<br>무료 매장 진단부터</h2>
-      <p class="lead" style="margin-top:16px">무료 진단 후 플랜별 맞춤 견적을 안내드립니다. 부담 없이 진단만 받아보세요.</p>
-      <a href="#apply" class="btn round-font">무료 진단 받기 🥕</a>
+    <div class="center reveal">
+      <span class="eyebrow">당근부스트 약속</span>
+      <h2 class="round-font">말이 아니라 <span class="o">결과</span>로 증명합니다</h2>
+      <p class="lead">걱정되는 것들, 하나씩 짚어드릴게요.</p>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-card reveal">
+        <div class="promise-ic">🛡️</div>
+        <h4>10위권 미달 시<br>무료 A/S</h4>
+        <p>목표 키워드 10위권 미달 시<br>추가 비용 없이 재작업합니다.</p>
+      </div>
+      <div class="promise-card reveal">
+        <div class="promise-ic">⚡</div>
+        <h4>결제 후 24시간 내<br>세팅 완료</h4>
+        <p>기다림 없이 빠르게 시작되고<br>완료 즉시 알려드립니다.</p>
+      </div>
+      <div class="promise-card reveal">
+        <div class="promise-ic">🔒</div>
+        <h4>계정 보안<br>최우선</h4>
+        <p>안전한 방식으로만 운영하며<br>정보는 절대 외부 유출 없습니다.</p>
+      </div>
+      <div class="promise-card reveal">
+        <div class="promise-ic">📊</div>
+        <h4>매달 진행 현황<br>투명 공유</h4>
+        <p>단골·후기 수 변화를<br>매달 카톡으로 공유합니다.</p>
+      </div>
+      <div class="promise-card reveal">
+        <div class="promise-ic">💬</div>
+        <h4>전담 담당자<br>1:1 소통</h4>
+        <p>카톡으로 편하게 연락주시면<br>담당자가 빠르게 응대합니다.</p>
+      </div>
+    </div>
+    <div class="promise-close reveal">
+      단골이 생기는 경험,<br><span class="o">한 번은 해봐야 압니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 후기 섹션 -->
+<section style="background:var(--cream)">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">REVIEW</span>
+      <h2 class="round-font">사장님들의 <span class="o">이야기</span></h2>
+      <p class="lead">시작 전엔 다들 반신반의했습니다.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"처음엔 반신반의했는데 진단 받고 보니 왜 손님이 안 오는지 바로 보이더라고요. 월 관리 시작하고 한 달 만에 단골이 눈에 띄게 늘었어요."</p>
+        <div class="review-who">
+          <div class="review-avatar">🍜</div>
+          <div><div class="review-name">박*준 사장님</div><div class="review-role">강남구 · 냉면집</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"비즈프로필이 텅 빈 상태였는데 일주일 만에 싹 채워주셨어요. 끌올도 알아서 해주시니까 이제 당근 신경 쓸 필요가 없어요."</p>
+        <div class="review-who">
+          <div class="review-avatar">✂️</div>
+          <div><div class="review-name">이*경 원장님</div><div class="review-role">은평구 · 헤어샵</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"다른 업체도 써봤는데 당근은 여기가 제일 체계적이에요. 후기 5건이 일주일 만에 다 달리더니 예약 문의도 확 늘었어요."</p>
+        <div class="review-who">
+          <div class="review-avatar">🍗</div>
+          <div><div class="review-name">최*민 사장님</div><div class="review-role">마포구 · 치킨집</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
