@@ -204,6 +204,16 @@
   .promise-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.65}
   .promise-close{text-align:center;margin-top:52px;font-size:clamp(20px,2.6vw,28px);font-weight:800;line-height:1.55;color:var(--ink)}
 
+  /* kakao */
+  .kakao-btn{background:#FEE500;color:#3C1E1E;box-shadow:0 10px 24px rgba(254,229,0,.38)}
+  .kakao-btn:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(254,229,0,.55)}
+  .kakao-float{position:fixed;bottom:24px;right:22px;z-index:99;width:58px;height:58px;border-radius:50%;background:#FEE500;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 26px rgba(0,0,0,.22);transition:.2s;text-decoration:none}
+  .kakao-float:hover{transform:scale(1.1);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+
+  /* closing */
+  .closing-urgent{font-size:14px;font-weight:700;color:var(--orange);letter-spacing:.06em;margin-bottom:18px}
+  .closing-big{font-size:clamp(26px,3.8vw,44px);line-height:1.28;letter-spacing:-.02em;font-weight:800}
+
   /* reviews */
   .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
   .review-card{background:#fff;border-radius:22px;padding:28px 24px;box-shadow:0 10px 30px rgba(214,95,12,.07);border:1px solid var(--cream2);display:flex;flex-direction:column}
@@ -539,6 +549,21 @@
   </div>
 </section>
 
+<!-- 클로징 urgency -->
+<section style="background:#fff;padding:72px 0 60px">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="closing-urgent">머뭇거리다 놓칩니다.</p>
+      <h2 class="closing-big round-font">여기까지 보셨다면<br>이미 <span class="o">준비가 된</span>겁니다.</h2>
+      <p class="lead" style="margin-top:18px">지금 바로 무료 진단 받고,<br>옆 가게보다 먼저 시작하세요.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:32px;gap:14px">
+        <a href="#apply" class="btn btn-primary round-font">무료 진단 신청하기 🥕</a>
+        <a href="https://open.kakao.com/o/sskakd6d" target="_blank" class="btn kakao-btn round-font">💬 카카오톡 상담</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="apply" style="padding-top:0">
   <div class="wrap">
     <div class="center reveal">
@@ -572,6 +597,8 @@
   <div class="logo round-font" style="font-size:17px"><svg viewBox="0 0 60 70"><use href="#mark"/></svg> 당근부스트</div>
   <div>© 2026 당근부스트 · 동네 장사 당근마케팅</div>
 </div></footer>
+
+<a href="https://open.kakao.com/o/sskakd6d" target="_blank" class="kakao-float" title="카카오톡 상담">💬</a>
 
 <script>
   const nav=document.getElementById('nav');
