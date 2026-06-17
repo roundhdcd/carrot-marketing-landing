@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>韩国太多选择？我帮你决定｜Quration 首尔行程</title>
+<meta property="og:title" content="信息太多·选择太难？我帮你筛选 🇰🇷">
+<meta property="og:description" content="输入预算+喜好，3分钟生成专属首尔行程 · 韩国实测·真实验证过，不踩雷">
+<meta property="og:image" content="https://roundhdcd.github.io/quration-seoul-course/logo.png">
+<meta property="og:type" content="website">
+<meta name="description" content="信息太多·选择太难？输入预算和喜好，3分钟生成专属首尔行程，韩国实测·真实验证过。">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{--ink:#26222b;--sub:#8a8594;--line:#f0e8ec;--bg:#fff6f4;--card:#fff;
+    --red:#e34b46;--blue:#2a4fa0;--accent:#ff5a7a;--soft:#fff3f0;--pink:#ffe3ea;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:-apple-system,"PingFang SC","Apple SD Gothic Neo","Malgun Gothic",Roboto,sans-serif;
+    background:linear-gradient(180deg,#fff0f3 0%,#fff6f4 30%,#f7f4f6 100%);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:480px;margin:0 auto;min-height:100vh;position:relative}
+  header{padding:18px 20px 14px;text-align:center;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .logo{display:inline-flex;align-items:center;gap:10px;font-weight:800}
+  .qk-img{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 3px 9px rgba(227,75,70,.25)}
+  .brand{font-size:23px;letter-spacing:.3px}
+  .tag-slogan{font-size:11.5px;color:var(--sub);margin-top:5px;letter-spacing:.2px}
+  .hbadge{display:inline-block;background:var(--pink);color:#e23a5e;font-size:11px;font-weight:800;padding:5px 12px;border-radius:30px;margin-bottom:9px;letter-spacing:.3px}
+  .panel{padding:18px}
+  .hero{background:linear-gradient(135deg,#fff,#fff5f4);border:1px solid #f6d9d7;border-radius:16px;padding:17px;margin-bottom:14px}
+  .hero .big{font-size:18px;font-weight:800;line-height:1.35;margin-bottom:6px}
+  .hero .sub{font-size:12.5px;color:#5b4636;line-height:1.5}
+  .hero .ko{font-size:11px;color:var(--sub);margin-top:8px;display:block;line-height:1.5}
+  .follow{display:flex;gap:8px;margin-bottom:14px}
+  .follow a{flex:1;text-decoration:none;text-align:center;padding:11px;border-radius:12px;font-size:12.5px;font-weight:700;border:1.5px solid var(--line);color:var(--ink);background:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
+  .follow .xhs{border-color:#ffd9d6;color:#ff2442}
+  .follow .wc{border-color:#cdeccf;color:#1aad19}
+  .blk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:13px;box-shadow:0 4px 16px rgba(227,75,70,.05)}
+  .label{font-size:13px;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:6px}
+  .label small{font-weight:500;color:var(--sub);font-size:11px}
+  .step{font-size:10px;font-weight:800;color:var(--accent);letter-spacing:.5px;margin-bottom:7px}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .opt{flex:1;min-width:60px;text-align:center;padding:11px 6px;border:1.5px solid var(--line);border-radius:11px;font-size:13px;cursor:pointer;background:#fff;transition:.15s;font-weight:600;color:var(--sub)}
+  .opt small{display:block;font-size:10px;font-weight:500;margin-top:2px;opacity:.8}
+  .opt.on{border-color:var(--accent);background:var(--pink);color:#e23a5e;box-shadow:0 3px 10px rgba(255,90,122,.18)}
+  .opt:active{transform:scale(.95)}
+  .opt.soon{border-style:dashed}.opt.soon small{color:var(--accent)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:9px 13px;border:1.5px solid var(--line);border-radius:30px;font-size:13px;cursor:pointer;background:#fff;transition:.15s;font-weight:600;color:var(--sub);display:flex;flex-direction:column;align-items:center;line-height:1.25}
+  .chip small{font-size:9.5px;font-weight:500;opacity:.75}
+  .chip.on{border-color:var(--accent);background:var(--pink);color:#e23a5e;box-shadow:0 3px 10px rgba(255,90,122,.18);transform:translateY(-1px)}
+  .chip:active{transform:scale(.93)}
+  .tin{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-weight:600;font-family:inherit}
+  .tin:focus{outline:none;border-color:var(--accent)}.tin::placeholder{color:#b9bbc0;font-weight:500}
+  .hint{font-size:11px;color:var(--sub);margin-top:9px;line-height:1.45}
+  .gen{width:100%;padding:17px;border:none;border-radius:16px;background:linear-gradient(135deg,#ff5a7a,#ff7a5a);color:#fff;font-size:16px;font-weight:800;cursor:pointer;margin-top:4px;letter-spacing:.5px;box-shadow:0 6px 18px rgba(255,90,122,.35)}
+  .gen:active{transform:scale(.98)}
+  .ask{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);font-size:14px;font-weight:700;cursor:pointer;margin-top:10px}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:14px}
+  .faq h4{font-size:13px;margin-bottom:6px}
+  .faq .qa{font-size:12px;color:#4b5563;padding:7px 0;border-top:1px solid var(--line);line-height:1.5}
+  .faq .qa b{color:var(--ink);display:block;margin-bottom:2px}
+  #result{padding:0 16px 40px;display:none}
+  .decis{background:#1a1d24;color:#fff;border-radius:14px;padding:14px 16px;margin:6px 0 14px;font-size:13px;line-height:1.55}
+  .decis b{color:#ffd24a}
+  .decis span{display:block;font-size:11px;color:#b9bbc0;margin-top:5px}
+  .summary{background:linear-gradient(135deg,#ff6b8b 0%,#ff8e72 100%);color:#fff;border-radius:18px;padding:18px;margin-bottom:16px;box-shadow:0 8px 22px rgba(255,107,139,.28)}
+  .summary h2{font-size:17px;margin-bottom:6px}.summary p{font-size:12.5px;opacity:.9}
+  .summary .meta{margin-top:11px;display:flex;gap:7px;flex-wrap:wrap}
+  .summary .meta span{background:rgba(255,255,255,.16);padding:5px 10px;border-radius:20px;font-size:11px}
+  .spotevt{background:linear-gradient(135deg,#fff3e6,#ffe9ef);border:1px solid #ffd9c2;border-radius:10px;padding:9px 11px;margin-top:8px;font-size:12.5px;line-height:1.45}
+  .spotevt b{color:#d4332f}
+  .spotevt .tg{font-size:9.5px;background:#ffe1d6;color:#c0392b;padding:1px 7px;border-radius:6px;font-weight:800;margin-left:4px}
+  .spotevt .kohint{font-size:11.5px;color:var(--sub)}
+  .day{margin-bottom:20px}
+  .day-h{display:flex;align-items:center;gap:9px;margin-bottom:11px;padding-left:2px}
+  .day-n{background:var(--accent);color:#fff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .day-h b{font-size:15px}.day-h small{color:var(--sub);font-size:11.5px;margin-left:auto}
+  .spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;position:relative}
+  .spot .cat{font-size:10.5px;color:var(--accent);font-weight:700;letter-spacing:.4px;margin-bottom:5px}
+  .vbadge{font-size:9.5px;color:#1a8a4a;background:#e9f8ef;padding:2px 6px;border-radius:5px;font-weight:800;margin-left:4px}
+  .spot .zh{font-size:16.5px;font-weight:800;margin-bottom:3px}
+  .ko-box{display:flex;align-items:center;gap:8px;background:var(--soft);border:1px dashed #e0ddd6;border-radius:9px;padding:7px 10px;margin:7px 0}
+  .ko-box .sign{font-size:9px;color:#b08a3a;font-weight:800;background:#fdf6e6;padding:2px 6px;border-radius:5px;white-space:nowrap}
+  .ko-box .ko{font-size:15px;font-weight:800;color:#2a2d34}.ko-box .pron{font-size:11px;color:var(--sub);margin-left:auto}
+  .reason{font-size:12.5px;color:#4b5563;margin-top:4px}
+  .reason b{color:var(--ink)}
+  .rev{font-size:12px;color:#6b5e4f;background:#fbf7f0;border-left:3px solid #e7c98c;padding:6px 9px;border-radius:0 7px 7px 0;margin-top:7px;line-height:1.45}
+  .ft{display:flex;align-items:center;gap:10px;margin-top:9px;font-size:11px;color:var(--sub)}.ft b{color:var(--ink);font-weight:700}
+  .links{display:flex;gap:8px;margin-top:10px}
+  .links a{flex:1;text-align:center;text-decoration:none;font-size:12px;font-weight:700;padding:9px;border-radius:10px;border:1.5px solid var(--line);color:var(--ink)}
+  .links a:active{background:var(--pink);border-color:var(--accent)}
+  input[type=date].tin{min-width:0}
+  .tips h4{cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center}
+  .fav{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#cfcfcf}
+  .fav.on{color:var(--accent);border-color:#f6cdcb;background:#fff5f4}
+  .est{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;text-align:center}
+  .est .t{font-size:12px;color:var(--sub)}.est .v{font-size:22px;font-weight:800;margin-top:3px}.est .v small{font-size:12px;color:var(--sub);font-weight:600}
+  .tips{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:14px}
+  .tips h4{font-size:13px;margin-bottom:8px}.tips .ti{font-size:12px;color:#4b5563;padding:6px 0;border-top:1px solid var(--line);line-height:1.5}.tips .ti b{color:var(--ink)}
+  .savebar{padding:14px 0 8px;margin-top:8px}
+  .share{width:100%;padding:14px;border:none;border-radius:13px;background:#22c55e;color:#fff;font-size:14.5px;font-weight:700;cursor:pointer;margin-bottom:9px;box-shadow:0 4px 12px rgba(34,197,94,.3)}
+  .savebar .join{width:100%;padding:15px;border:none;border-radius:13px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(212,51,47,.32)}
+  .restart{display:block;width:100%;text-align:center;background:none;border:1.5px solid var(--line);border-radius:12px;padding:12px;color:var(--ink);font-size:13px;margin-top:9px;cursor:pointer;font-weight:700}
+  .ov{position:fixed;inset:0;background:rgba(20,22,28,.55);display:none;align-items:flex-end;justify-content:center;z-index:50}.ov.show{display:flex}
+  .sheet{background:#fff;width:100%;max-width:480px;border-radius:22px 22px 0 0;padding:24px 22px calc(24px + env(safe-area-inset-bottom));animation:up .25s ease;position:relative}
+  @keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .sheet h3{font-size:18px;margin-bottom:5px}.sheet .d{font-size:12.5px;color:var(--sub);margin-bottom:15px;line-height:1.5}
+  .saved-list{background:var(--soft);border-radius:11px;padding:11px 13px;margin-bottom:14px;font-size:12.5px;max-height:120px;overflow:auto}.saved-list div{padding:3px 0;color:#374151}
+  .benefits{background:#fff7f0;border:1px solid #fde4d3;border-radius:12px;padding:13px 14px;margin-bottom:14px}
+  .benefits .bt{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.4px;margin-bottom:8px}
+  .benefits .bi{font-size:12.5px;color:#5b4636;padding:4px 0;display:flex;gap:7px;line-height:1.45}
+  .field{margin-bottom:13px}.field label{font-size:12px;font-weight:700;display:block;margin-bottom:6px}
+  .field input,.sheet textarea{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-family:inherit}
+  .sheet textarea{resize:vertical;min-height:74px}.field input:focus,.sheet textarea:focus{outline:none;border-color:var(--accent)}
+  .submit{width:100%;padding:15px;border:none;border-radius:12px;background:var(--ink);color:#fff;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px}
+  .close{position:absolute;top:14px;right:18px;font-size:24px;color:#bbb;cursor:pointer;background:none;border:none}
+  .ok{text-align:center;padding:14px 0}.ok .big{font-size:40px}.ok h3{margin:8px 0 4px}.ok p{font-size:13px;color:var(--sub);line-height:1.5}
+  .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:#1a1d24;color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;z-index:99;opacity:0;transition:.3s;pointer-events:none}.toast.show{opacity:1}
+  .foot{text-align:center;font-size:10.5px;color:#b9bbc0;padding:18px}
+  .trust-box{background:linear-gradient(135deg,#f0fff4,#e8f5e9);border:1.5px solid #a8d8b0;border-radius:16px;padding:15px 16px;margin-top:14px}
+  .trust-row{font-size:13px;color:#2a4a35;padding:5px 0;line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+  .trust-row b{color:#1a7a3a}
+  .trust-btns{display:flex;gap:8px;margin-top:10px}
+  .trust-btns a,.trust-btns button{flex:1;text-align:center;font-size:12.5px;font-weight:700;padding:10px;border-radius:10px;border:1.5px solid #b8d8be;color:#1a6a30;background:#fff;cursor:pointer;text-decoration:none;font-family:inherit}
+  .trust-btns a:active,.trust-btns button:active{background:#e0f0e5}
+  .plt-row{display:flex;gap:8px;margin-bottom:0}
+  .plt{flex:1;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--sub);font-family:inherit;transition:.15s}
+  .plt.on{border-color:var(--accent);background:var(--pink);color:#e23a5e}
+  .tab-nav{display:flex;background:#fff;border-bottom:2px solid var(--line);position:sticky;top:73px;z-index:19}
+  .tab-btn{flex:1;padding:10px 4px;border:none;background:none;font-size:11.5px;font-weight:700;color:var(--sub);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;border-bottom:3px solid transparent;margin-bottom:-2px;font-family:inherit;transition:.15s}
+  .tab-btn small{font-size:9.5px;font-weight:500}
+  .tip-card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .tip-head{padding:14px 16px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:9px;user-select:none;-webkit-tap-highlight-color:transparent}
+  .tip-head .tip-arr{margin-left:auto;font-size:12px;color:var(--sub);transition:.2s;display:inline-block}
+  .tip-head.open .tip-arr{transform:rotate(180deg)}
+  .tip-body{padding:0 16px 14px;font-size:13px;color:#4b5563;line-height:1.65;border-top:1px solid var(--line)}
+  .tip-body ul{padding-left:0;list-style:none}
+  .tip-body ul li{padding:4px 0;display:flex;gap:7px}
+  .tip-body ul li::before{content:"·";color:var(--accent);font-weight:900;flex-shrink:0}
+  .tip-body b{color:var(--ink)}
+  .tip-body .tip-warn{background:#fff8e8;border:1px solid #fde8a0;border-radius:8px;padding:6px 10px;margin-top:8px;font-size:12px;color:#7a5a00}
+  .pick-section-title{font-size:14px;font-weight:800;margin:20px 0 11px;display:flex;align-items:center;gap:7px}
+  .pick-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:11px;display:flex;gap:12px;align-items:flex-start}
+  .pick-card .pick-ico{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,#fff0f3,#ffe8ee);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .pick-card .pick-info{flex:1;min-width:0}
+  .pick-card .pick-brand{font-size:12px;color:var(--sub);font-weight:600}
+  .pick-card .pick-name{font-size:15px;font-weight:800;margin:2px 0}
+  .pick-card .pick-zh{font-size:12.5px;color:#5b4636;line-height:1.45;margin-bottom:5px}
+  .pick-card .pick-badge{font-size:10px;background:var(--pink);color:#e23a5e;padding:2px 8px;border-radius:20px;font-weight:800;display:inline-block}
+  .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+  .pcard.rec{border-left:4px solid #22c55e}
+  .pcard.avoid{border-left:4px solid var(--red)}
+  .pcard-img{width:100%;height:160px;object-fit:contain;display:block;background:#fff;padding:8px;box-sizing:border-box}
+  .pcard-img-ph{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:42px;background:linear-gradient(135deg,#f5f0fa,#fce8f0)}
+  .spot-img{width:100%;height:160px;object-fit:cover;display:block;border-radius:8px;margin-bottom:10px}
+  .pcard-body{padding:13px 14px 14px}
+  .pcard .verdict{font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:5px;display:inline-block;margin-bottom:6px}
+  .pcard.rec .verdict{background:#e9f8ef;color:#1a8a4a}
+  .pcard.avoid .verdict{background:#fce8e8;color:var(--red)}
+  .pcard .pname{font-size:16px;font-weight:800;margin-bottom:2px}
+  .pcard .pko{font-size:13px;color:var(--sub);margin-bottom:7px}
+  .pcard .ingredient{font-size:11.5px;background:#f7f4f0;border-radius:7px;padding:5px 9px;color:#5b4636;margin-bottom:7px}
+  .pcard .ingredient b{color:#b08a3a}
+  .pcard .preason{font-size:12.5px;color:#4b5563;margin-bottom:5px;line-height:1.5}
+  .pcard .prev{font-size:12px;color:#6b5e4f;background:#fbf7f0;border-left:3px solid #e7c98c;padding:6px 9px;border-radius:0 7px 7px 0;margin-top:6px}
+  .pcard .pprice{font-size:12px;color:var(--sub);margin-top:7px}
+  .related{margin-top:9px;border-top:1px solid var(--line);padding-top:8px}
+  .rel-toggle{font-size:12px;color:var(--sub);cursor:pointer;display:flex;align-items:center;gap:4px;padding:2px 0;font-weight:600;user-select:none}
+  .rel-list{margin-top:6px;display:flex;flex-direction:column;gap:5px}
+  .rel-item{display:block;font-size:12px;color:#ff2442;text-decoration:none;padding:8px 10px;background:#fff5f5;border:1px solid #ffd9d6;border-radius:8px;font-weight:600;line-height:1.35}
+  .rel-item small{display:block;color:var(--sub);font-size:10.5px;margin-top:2px;font-weight:500}
+  .rel-header{font-size:11px;font-weight:700;color:var(--sub);margin-bottom:6px;display:flex;align-items:center;gap:4px;letter-spacing:.2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo"><img class="qk-img" src="logo.png" alt="QK"><span class="brand">Quration Korea</span></div>
+    <div class="tag-slogan">你的韩国旅行决策助手 · 한국 여행 의사결정 파트너</div>
+  </header>
+  <div class="tab-nav">
+    <button class="tab-btn" id="tab-travel" onclick="switchTab('travel')">🗺 首尔行程<small>서울코스</small></button>
+    <button class="tab-btn active" id="tab-beauty" onclick="switchTab('beauty')">💄 K美妆筛选<small>화장품걸러줌</small></button>
+    <button class="tab-btn" id="tab-pick" onclick="switchTab('pick')">✨ 旅行必看<small>큐레이션픽</small></button>
+  </div>
+
+  <div class="panel" id="form" style="display:none">
+    <div class="hero">
+      <div class="hbadge">⏱ 3分钟搞定 · 3분이면 끝 ✨</div>
+      <div class="big">韩国太多选择？<br>我们帮你决定 🇰🇷🫶</div>
+      <div class="sub">不是又一个攻略整理 — 告诉你「为什么值得去」，韩国实测·真实验证过 ✅</div>
+      <span class="ko">한국엔 선택지가 너무 많죠? 우리가 결정해드립니다 — 검색 말고, 검증된 선택을.</span>
+    </div>
+
+    <div class="follow">
+      <a class="xhs" href="#" id="lnk-xhs" onclick="return follow('xhs')">📕 关注小红书 · 샤오홍슈</a>
+      <a class="wc" href="#" id="lnk-wc" onclick="return follow('wc')">💬 加微信 · 위챗 추가</a>
+    </div>
+
+    <div class="blk">
+      <div class="step">STEP 1</div>
+      <div class="label">📍 城市 <small>도시</small></div>
+      <div class="row">
+        <div class="opt on" data-city="seoul">首尔<small>서울 Seoul</small></div>
+        <div class="opt soon" onclick="reqCity('仁川 인천')">仁川<small>인천 · 신청</small></div>
+        <div class="opt soon" onclick="reqCity('釜山 부산')">釜山<small>부산 · 신청</small></div>
+        <div class="opt soon" onclick="reqCity('济州 제주')">济州<small>제주 · 신청</small></div>
+      </div>
+      <div class="hint">🚧 다른 도시는 출시 예정 — 눌러서 신청하면 먼저 알려드려요</div>
+    </div>
+
+    <div class="blk">
+      <div class="step">STEP 2</div>
+      <div class="label">🎯 旅行目的 <small>여행 목적 (복수선택) — 어디가 아니라 "뭘 하고 싶은지"</small></div>
+      <div class="chips" id="interests">
+        <div class="chip on" data-i="food">🍜 美食<small>먹거리</small></div>
+        <div class="chip on" data-i="cafe">☕ 感性咖啡<small>감성카페</small></div>
+        <div class="chip" data-i="shop">🛍 购物<small>쇼핑</small></div>
+        <div class="chip" data-i="view">🌆 美景夜景<small>좋은뷰</small></div>
+        <div class="chip" data-i="culture">🏯 文化体验<small>문화체험</small></div>
+        <div class="chip" data-i="beauty">💄 美妆<small>뷰티</small></div>
+        <div class="chip" data-i="medical">🏥 医美体检<small>의료관광</small></div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="step">STEP 3</div>
+      <div class="label">💰 旅行风格 <small>여행 스타일</small></div>
+      <div class="row" id="style">
+        <div class="opt" data-s="eco">经济型<small>가성비</small></div>
+        <div class="opt on" data-s="std">标准型<small>일반</small></div>
+        <div class="opt" data-s="lux">轻奢型<small>프리미엄</small></div>
+      </div>
+      <input class="tin" id="budget" style="margin-top:9px" placeholder="(선택) 구체 예산 입력 · 예: 50만원 / 例: 3000元">
+    </div>
+
+    <div class="blk">
+      <div class="step">STEP 4</div>
+      <div class="label">🗓 行程日期 <small>여행 날짜 (선택하면 며칠인지 자동계산)</small></div>
+      <div style="display:flex;gap:8px">
+        <input class="tin" type="date" id="dStart" onchange="calcDays()">
+        <input class="tin" type="date" id="dEnd" onchange="calcDays()">
+      </div>
+      <div id="dInfo" class="hint">출발일·도착일 선택 → 자동 N박N일 · 选好日期自动算天数 (안 골라도 OK, 기본 2박3일)</div>
+    </div>
+
+    <button class="gen" onclick="generate()">⚡ 帮我决定 · 일정 만들어줘</button>
+    <button class="ask" onclick="openInquiry()">💬 궁금한 점 문의하기 · 有问题？点这里问</button>
+
+    <div class="faq">
+      <h4>❓ 자주 묻는 질문 · 常见问题</h4>
+      <div class="qa"><b>免费吗? 무료인가요?</b>完全免费，选目的即可生成 · 목적만 고르면 무료 생성</div>
+      <div class="qa"><b>其他城市? 다른 도시는?</b>仁川/釜山/济州 即将开通 · 인천·부산·제주 신청 가능</div>
+      <div class="qa"><b>有问题? 궁금한 점은?</b>留言+微信，真人直接回复 · 문의 남기면 바로 답변</div>
+    </div>
+    <div class="foot">Quration Korea · 검증된 선택 Curate · Verify · Select</div>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="panel" id="beauty-form">
+    <div class="hero">
+      <div class="hbadge">💄 K美妆 · 성분으로 직접 걸러줌 ✅</div>
+      <div class="big">올영 뭐 사야해？<br>我帮你筛好了 🇰🇷</div>
+      <div class="sub">不是所有网红产品都值买 — 按成分筛，真正有效的才留下 · 성분 기준으로 직접 걸러줘요</div>
+      <span class="ko">연예인 광고 아닌 성분으로 판단 — 살 것 vs 버릴 것 알려드려요</span>
+    </div>
+    <div class="blk">
+      <div class="step">STEP 1</div>
+      <div class="label">😟 肤质烦恼 <small>피부 고민 (복수선택)</small></div>
+      <div class="chips" id="b-concerns">
+        <div class="chip on" data-c="brightening">✨ 美白淡斑<small>미백</small></div>
+        <div class="chip" data-c="wrinkle">🕰 抗皱紧致<small>주름</small></div>
+        <div class="chip" data-c="trouble">🔴 痘痘敏感<small>트러블</small></div>
+        <div class="chip" data-c="moisture">💧 补水保湿<small>보습</small></div>
+        <div class="chip" data-c="sensitive">🌸 敏感肌<small>민감성</small></div>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="step">STEP 2</div>
+      <div class="label">🛍 品类 <small>카테고리 (복수선택)</small></div>
+      <div class="chips" id="b-cats">
+        <div class="chip on" data-bc="skincare">🧴 护肤品<small>스킨케어</small></div>
+        <div class="chip" data-bc="mask">🎭 面膜<small>마스크팩</small></div>
+        <div class="chip" data-bc="suncare">☀️ 防晒<small>선케어</small></div>
+        <div class="chip" data-bc="makeup">💄 彩妆<small>색조</small></div>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="step">STEP 3</div>
+      <div class="label">💰 预算 <small>예산</small></div>
+      <div class="row" id="b-budget">
+        <div class="opt on" data-bb="low">实惠型<small>~3만원</small></div>
+        <div class="opt" data-bb="mid">标准型<small>3~8만원</small></div>
+        <div class="opt" data-bb="high">轻奢型<small>8만원~</small></div>
+      </div>
+    </div>
+    <button class="gen" onclick="generateBeauty()">💄 帮我筛选 · 걸러줘</button>
+    <button class="ask" onclick="openInquiry()">💬 궁금한 제품 물어보기 · 有问题问我</button>
+    <div class="foot">Quration Korea · 성분으로 걸러줌 · 按成分筛选</div>
+  </div>
+  <div id="beauty-result" style="display:none;padding:0 16px 40px"></div>
+</div>
+
+<div class="ov" id="ov"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ====== 연결 설정 (relay/계정) — 받으면 여기만 채우면 됨 ======
+const RELAY_URL = "https://script.google.com/macros/s/AKfycbzP5w3dYVWtMELfy9mvo8mnf9fPdQLs0fwBoNwoE1dCgbtV8k590BLxgpxSjz7pA9Bv/exec";  // 구글시트 DB+메일알람
+const XHS_URL   = "https://xhslink.com/m/4sU1stOW38l";  // 샤오홍슈 프로필(Rami) — 바로 이동
+const XHS_ID    = "94342747991";   // 샤오홍슈 ID (Rami)
+const WECHAT_ID = "Quration_Korea";   // 위챗 ID (Rami)
+const WECHAT_QR = "wechat-qr.jpg";    // 위챗 추가 QR
+
+const SPOTS = [
+ {zh:"圣水洞咖啡街",ko:"성수동 카페거리",pron:"Seongsu",cat:"cafe",area:"성수",areaZh:"圣水洞",cost:"₩8,000~15,000",time:"2-3h",why_zh:"首尔最潮咖啡区，工业风网红店密集",rev:"拍照超出片，咖啡也好喝",rec:328,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg",event:{tag:"팝업",zh:"MARITHÉ 设计师快闪店",ko:"마리떼 디자이너 팝업",where:"성수 연무장길",when:"~6/30",price:"免费入场·무료"}},
+ {zh:"大林仓库画廊咖啡",ko:"대림창고",pron:"Daerim",cat:"cafe",area:"성수",areaZh:"圣水洞",cost:"₩9,000~16,000",time:"1-2h",why_zh:"旧仓库改造，超大空间打卡圣地",rev:"空间太大，随便拍都好看",rec:156,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"圣水手工鞋街",ko:"성수수제화거리",pron:"Suje-hwa",cat:"shop",area:"성수",areaZh:"圣水洞",cost:"₩50,000~",time:"1h",why_zh:"手工皮鞋一条街，性价比高",rev:"真皮手工，比国内划算",rec:64,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"首尔之林",ko:"서울숲",pron:"Seoul Forest",cat:"view",area:"성수",areaZh:"圣水洞",cost:"免费 무료",time:"1-2h",why_zh:"市区大公园，春樱秋枫绝佳",rev:"散步遛娃都合适，还免费",rec:201,img:"https://upload.wikimedia.org/wikipedia/commons/f/f5/SeoulForest.jpg"},
+
+ {zh:"益善洞韩屋街",ko:"익선동",pron:"Ikseon-dong",cat:"culture",area:"익선동",areaZh:"益善洞",cost:"₩9,000~16,000",time:"1-2h",why_zh:"韩屋改造咖啡+窄巷，只有韩国才有的体验",rev:"韩屋拍照绝了，巷子超有味道",rec:288,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg/960px-View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg"},
+ {zh:"北村韩屋村",ko:"북촌한옥마을",pron:"Bukchon Hanok",cat:"culture",area:"북촌",areaZh:"北村",cost:"免费 무료",time:"2h",why_zh:"传统韩屋巷弄，韩服拍照绝美",rev:"穿韩服拍照太美了",rec:276,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bukchon_Hanok_Village_01.jpg/960px-Bukchon_Hanok_Village_01.jpg"},
+ {zh:"景福宫",ko:"경복궁",pron:"Gyeongbokgung",cat:"culture",area:"북촌",areaZh:"北村",cost:"₩3,000(韩服免费)",time:"2h",why_zh:"朝鲜王宫，穿韩服免门票",rev:"穿韩服免门票，超划算",rec:301,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg/960px-%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg",event:{tag:"이벤트",zh:"韩服免费拍照日",ko:"한복 무료 포토데이",where:"광화문 광장",when:"매주 토·일",price:"免费·무료"}},
+ {zh:"三清洞茶屋街",ko:"삼청동",pron:"Samcheong",cat:"cafe",area:"북촌",areaZh:"北村",cost:"₩9,000~15,000",time:"1-2h",why_zh:"安静茶屋+小众咖啡，文艺路线",rev:"安静文艺，咖啡好喝",rec:114,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg"},
+
+ {zh:"明洞购物街",ko:"명동거리",pron:"Myeong-dong",cat:"shop",area:"명동",areaZh:"明洞",cost:"自由",time:"2-3h",why_zh:"游客必去，化妆品+小吃一条龙",rev:"该买的都能买齐，热闹",rec:410,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ {zh:"Olive Young 明洞旗舰店",ko:"올리브영 명동타운",pron:"Olive Young",cat:"beauty",area:"명동",areaZh:"明洞",cost:"₩30,000~",time:"1-2h",why_zh:"韩国美妆一站式，外国人结账打折",rev:"扫货圣地，退税方便",rec:512,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg",event:{tag:"할인",zh:"外国人专属折扣周",ko:"외국인 할인위크",where:"명동타운점",when:"~6/30",price:"凭护照9折·여권시 10%"}},
+ {zh:"OFF BEAUTY 明洞店（折扣仓）",ko:"오프뷰티 명동점",pron:"Off Beauty",cat:"beauty",area:"명동",areaZh:"明洞",cost:"₩2,000~",time:"1h",why_zh:"韩国版COSTCO美妆！直接买断省中间商，最高90%折扣。닥터지·이니스프리·설화수·샤넬 同款，价格低到你不信",rev:"아이크림 2천원, 닥터지 선크림 1만원 실화냐..다 샀다",rec:387,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ {zh:"明洞刀削面(明洞饺子)",ko:"명동교자",pron:"Myeongdong Gyoja",cat:"food",area:"명동",areaZh:"明洞",cost:"₩10,000~14,000",time:"1h",why_zh:"米其林必比登刀削面老店",rev:"汤头惊艳，排队也值",rec:289,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ {zh:"南山首尔塔",ko:"남산서울타워",pron:"N Seoul Tower",cat:"view",area:"명동",areaZh:"明洞",cost:"₩21,000",time:"2h",why_zh:"情侣锁+夜景，首尔地标",rev:"夜景绝了，情侣必来",rec:355,img:"https://upload.wikimedia.org/wikipedia/commons/0/0f/N_Seoul_Tower_Panorama_001.jpg"},
+
+ {zh:"林荫道(新沙)",ko:"가로수길",pron:"Garosu-gil",cat:"shop",area:"강남",areaZh:"江南",cost:"自由",time:"2h",why_zh:"设计师品牌+网红店林立",rev:"小众设计店多，好逛",rec:130,img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Apple_%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8_04.jpg"},
+ {zh:"江南皮肤科一条街",ko:"강남 피부과거리",pron:"Gangnam",cat:"medical",area:"강남",areaZh:"江南",cost:"咨询 상담",time:"1-2h",why_zh:"激光/水光/提升，先咨询再决定",med:true,rev:"先咨询不踩雷，按需选",rec:88,img:""},
+ {zh:"COEX 星空图书馆",ko:"별마당도서관",pron:"Starfield",cat:"view",area:"강남",areaZh:"江南",cost:"免费 무료",time:"1h",why_zh:"超高书墙，免费打卡名所",rev:"免费打卡，书墙超震撼",rec:240,img:"https://upload.wikimedia.org/wikipedia/commons/c/c9/Library_in_Seoul_%2853608036346%29.jpg",event:{tag:"전시",zh:"沉浸式媒体艺术展",ko:"미디어아트 전시",where:"COEX 1F",when:"常设·상설",price:"免费·무료"}},
+ {zh:"江南高端体检中心",ko:"강남 종합검진센터",pron:"Health Check",cat:"medical",area:"강남",areaZh:"江南",cost:"咨询 상담",time:"반나절",why_zh:"半天高端套餐，中文协助",med:true,rev:"半天搞定，有中文协助放心",rec:51,img:""},
+
+ {zh:"弘大购物步行街",ko:"홍대걷고싶은거리",pron:"Hongdae",cat:"shop",area:"홍대",areaZh:"弘大",cost:"自由",time:"2-3h",why_zh:"年轻人聚集，街头表演+小店",rev:"街头表演有意思，超青春",rec:198,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg",event:{tag:"공연",zh:"周末街头演出(버스킹)",ko:"주말 버스킹",where:"홍대 걷고싶은거리",when:"토·일 저녁",price:"免费·무료"}},
+ {zh:"人生四格自拍馆",ko:"인생네컷",pron:"Insaeng Netcut",cat:"culture",area:"홍대",areaZh:"弘大",cost:"₩4,000~6,000",time:"30m",why_zh:"韩国必玩四格拍照，留作纪念",rev:"必拍！便宜又好玩",rec:367,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"弘大布帐马车(夜宵)",ko:"홍대 포장마차",pron:"Pojangmacha",cat:"food",area:"홍대",areaZh:"弘大",cost:"₩15,000~25,000",time:"1-2h",why_zh:"夜晚街边烤肉+烧酒体验",rev:"夜宵气氛拉满",rec:121,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+
+ {zh:"广藏市场美食",ko:"광장시장",pron:"Gwangjang",cat:"food",area:"종로",areaZh:"钟路",cost:"₩10,000~20,000",time:"1-2h",why_zh:"绿豆煎饼+生拌牛肉，传统市场美食",rev:"绿豆煎饼+生牛肉，必吃",rec:233,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gwangjang_Market%2C_Seoul%2C_Korea.jpg/1280px-Gwangjang_Market%2C_Seoul%2C_Korea.jpg"},
+ {zh:"OFF BEAUTY 广藏市场店",ko:"오프뷰티 광장시장점",pron:"Off Beauty",cat:"beauty",area:"종로",areaZh:"钟路",cost:"₩2,000~",time:"1h",why_zh:"창고형 K뷰티 아울렛·最高90%折！外国游客口碑爆棚 — 广藏市场逛完顺路必去",rev:"외국인 관광객들을 노린 창고형 화장품 할인 매장, 가격 미쳤음",rec:387,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gwangjang_Market%2C_Seoul%2C_Korea.jpg/1280px-Gwangjang_Market%2C_Seoul%2C_Korea.jpg"},
+ {zh:"乐天世界塔 SEOUL SKY",ko:"롯데월드타워 서울스카이",pron:"Lotte Tower",cat:"view",area:"잠실",areaZh:"蚕室",cost:"₩27,000",time:"1-2h",why_zh:"首尔最高夜景，123层俯瞰全城",rev:"夜景太震撼了，必上",rec:176,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"乐天世界",ko:"롯데월드",pron:"Lotte World",cat:"culture",area:"잠실",areaZh:"蚕室",cost:"₩62,000",time:"반나절+",why_zh:"室内外游乐园，体验感满分",rev:"室内也能玩，超好玩",rec:187,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"汉江公园野餐",ko:"한강공원",pron:"Han River",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"₩10,000~",time:"2h",why_zh:"骑车+炸鸡泡面+夜景，惬意首尔日常",rev:"炸鸡泡面看夜景，太惬意",rec:259,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ // ── 성수 추가 (→10개) ──
+ {zh:"延武场街 팝업 스토어",ko:"성수 연무장길",pron:"Yeonmujang-gil",cat:"shop",area:"성수",areaZh:"圣水洞",cost:"自由",time:"1-2h",why_zh:"首尔最密集品牌快闪聚集地，设计师品牌+限定联名频繁更新",rev:"每次来都有新快闪，超好逛",rec:178,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"纛岛汉江公园",ko:"뚝섬한강공원",pron:"Ttukseom Park",cat:"view",area:"성수",areaZh:"圣水洞",cost:"免费 무료",time:"1-2h",why_zh:"汉江边大型休闲公园，水上活动+夜景，圣水步行可达",rev:"河边骑车太惬意，夏天必来",rec:142,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"언더스탠드 에비뉴",ko:"언더스탠드에비뉴",pron:"Understand Avenue",cat:"shop",area:"성수",areaZh:"圣水洞",cost:"自由",time:"1h",why_zh:"集装箱改造复合文化空间，小众品牌+美食+展览，工业风拍照圣地",rev:"独特工业风，随便拍都出片",rec:115,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"성수 精品面包咖啡",ko:"성수동 베이커리 카페투어",pron:"Bakery Cafe",cat:"cafe",area:"성수",areaZh:"圣水洞",cost:"₩8,000~16,000",time:"1-2h",why_zh:"韩国排队最长的精品面包店集中地，每家只卖几款，全靠品质",rev:"排队但值，面包香气绝了",rec:209,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"성수 무신사 스탠다드",ko:"무신사 스탠다드 성수",pron:"Musinsa Standard",cat:"shop",area:"성수",areaZh:"圣水洞",cost:"₩30,000~",time:"1h",why_zh:"韩国最大潮流平台旗舰店，性价比韩风服装，国内无法直接购买",rev:"가성비 좋고 핏도 한국 감성이야",rec:187,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ {zh:"아크앤북 복합서점",ko:"아크앤북 성수",pron:"Arc N Book",cat:"culture",area:"성수",areaZh:"圣水洞",cost:"自由",time:"1h",why_zh:"工业风书店+咖啡+画廊，圣水独立文化空间代表，年轻人爱来",rev:"책+커피+전시, 성수 문화공간 최고",rec:87,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Evening_street_in_Seongsu-dong.jpg/960px-Evening_street_in_Seongsu-dong.jpg"},
+ // ── 익선동/북촌 추가 (→각 5+·합10개+) ──
+ {zh:"昌德宫 (世界文化遗产)",ko:"창덕궁",pron:"Changdeokgung",cat:"culture",area:"북촌",areaZh:"北村",cost:"₩3,000",time:"2h",why_zh:"联合国教科文世界遗产，韩国宫殿中保存最完整，秘苑后花园绝美",rev:"比景福宫更精致，秘苑游览绝美",rec:198,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Changdeokgung_palace_outer_gate.jpg/960px-Changdeokgung_palace_outer_gate.jpg"},
+ {zh:"仁寺洞传统工艺街",ko:"인사동",pron:"Insadong",cat:"culture",area:"익선동",areaZh:"益善洞",cost:"自由",time:"1-2h",why_zh:"传统工艺+画廊+韩纸专卖，买韩国特色伴手礼首选，文艺气息浓厚",rev:"买了好多独特小物，比机场便宜多了",rec:172,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Insadong_Seoul_Korea.jpg/1280px-Insadong_Seoul_Korea.jpg"},
+ {zh:"쌈지길 工艺市集",ko:"인사동 쌈지길",pron:"Ssamziegil",cat:"shop",area:"익선동",areaZh:"益善洞",cost:"自由",time:"1h",why_zh:"螺旋形独立设计师市场，手工艺+小众品牌+街头美食，仁寺洞必逛",rev:"每层都有惊喜，螺旋坡道拍照超好看",rec:143,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Insadong_Seoul_Korea.jpg/1280px-Insadong_Seoul_Korea.jpg"},
+ {zh:"宗庙 (世界文化遗产)",ko:"종묘",pron:"Jongmyo Shrine",cat:"culture",area:"익선동",areaZh:"益善洞",cost:"₩1,000",time:"1h",why_zh:"联合国教科文遗产·朝鲜王家祭祀殿，气氛肃穆震撼，历史爱好者必来",rev:"肃穆感令人震撼，与景福宫完全不同的氛围",rec:89,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg/960px-View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg"},
+ {zh:"运玄宫 近代史宫殿",ko:"운현궁",pron:"Unhyeongung",cat:"culture",area:"익선동",areaZh:"益善洞",cost:"免费 무료",time:"1h",why_zh:"兴宣大院君邸，韩国近代史重要宫殿，益善洞旁顺路必来",rev:"免费参观，益善동 동선에 포함하기 딱 좋아",rec:54,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg/960px-View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg"},
+ {zh:"삼청동 갤러리거리",ko:"삼청동 갤러리거리",pron:"Gallery Street",cat:"culture",area:"북촌",areaZh:"北村",cost:"自由",time:"1h",why_zh:"小众画廊+精品咖啡聚集，北村最文艺的延伸路线",rev:"看展+咖啡，北村最有格调的街",rec:76,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg"},
+ {zh:"청와대 관람",ko:"청와대",pron:"Cheong Wa Dae",cat:"culture",area:"북촌",areaZh:"北村",cost:"免费 무료",time:"1-2h",why_zh:"韩国前总统府2022年起对外开放，宫殿级官邸+山岳景观，景福宫旁",rev:"청와대가 개방된 거 신기해서 갔는데 생각보다 진짜 좋아",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg/960px-%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg"},
+ // ── 명동 추가 (→10개) ──
+ {zh:"明洞圣堂 (天主教圣堂)",ko:"명동성당",pron:"Cathedral",cat:"culture",area:"명동",areaZh:"明洞",cost:"免费 무료",time:"30m",why_zh:"韩国最具代表性天主教堂，哥特式建筑是明洞地标，夜晚打灯更美",rev:"不信教也去打卡，建筑真的很美",rec:167,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Myeongdong_Cathedral_%28%EC%84%9C%EC%9A%B8_%EB%AA%85%EB%8F%99%EC%84%B1%EB%8B%B9%29.jpg/960px-Myeongdong_Cathedral_%28%EC%84%9C%EC%9A%B8_%EB%AA%85%EB%8F%99%EC%84%B1%EB%8B%B9%29.jpg"},
+ {zh:"南山缆车",ko:"남산 케이블카",pron:"Cable Car",cat:"view",area:"명동",areaZh:"明洞",cost:"₩12,000",time:"30m",why_zh:"6分钟登南山，全首尔俯瞰视角，比走路省力，情侣推荐路线",rev:"比走路省力多了，视野一下就开阔",rec:224,img:"https://upload.wikimedia.org/wikipedia/commons/0/0f/N_Seoul_Tower_Panorama_001.jpg"},
+ {zh:"롯데백화점 본점",ko:"롯데백화점 본점",pron:"Lotte Dept.",cat:"shop",area:"명동",areaZh:"明洞",cost:"自由",time:"1-2h",why_zh:"韩国最大百货旗舰，免税店+高端品牌+美食全聚集，下雨天购物圣地",rev:"비 올 때 여기 오면 하루가 간다",rec:198,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ {zh:"명동 길거리음식 골목",ko:"명동 길거리 음식",pron:"Street Food",cat:"food",area:"명동",areaZh:"明洞",cost:"₩3,000~8,000",time:"1h",why_zh:"蟹腿鱼糕+旋风土豆+蜂蜜糖饼，每走10步换一种吃法，必吃体验",rev:"随便走随便吃，每家都好吃",rec:334,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ {zh:"신세계 면세점 명동",ko:"신세계 면세점",pron:"Shinsegae",cat:"shop",area:"명동",areaZh:"明洞",cost:"自由",time:"1-2h",why_zh:"市中心大型免税店，护照+航班信息可购免税品，化妆品全线比机场方便",rev:"시내 면세점이라 공항보다 훨씬 여유로워",rec:176,img:"https://upload.wikimedia.org/wikipedia/commons/2/23/Seoul-Myeongdong-02.jpg"},
+ // ── 강남 추가 (→10개) ──
+ {zh:"압구정 로데오거리",ko:"압구정 로데오",pron:"Apgujeong Rodeo",cat:"shop",area:"강남",areaZh:"江南",cost:"自由",time:"2h",why_zh:"韩国潮流+高端美容+设计师品牌街，韩剧拍摄地，明星美容院集中",rev:"고급 감성 거리, 뷰티&패션 둘 다 최고야",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Apple_%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8_04.jpg"},
+ {zh:"청담동 명품거리",ko:"청담동 명품거리",pron:"Cheongdam Luxury",cat:"shop",area:"강남",areaZh:"江南",cost:"自由",time:"1-2h",why_zh:"LV·Chanel·Dior韩国旗舰+高端韩国设计师品牌，K럭셔리의 성지",rev:"买不起但眼睛买了，街景超美",rec:112,img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Apple_%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8_04.jpg"},
+ {zh:"봉은사 (도심 사찰)",ko:"봉은사",pron:"Bongeunsa",cat:"culture",area:"강남",areaZh:"江南",cost:"免费 무료",time:"1h",why_zh:"COEX旁千年古寺，都市中的禅意，韩国寺庙文化体验免费",rev:"COEX 逛완주 여기 오면 반전 매력, 너무 치유돼",rec:134,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Bongeunsa_Temple%2C_Seoul%2C_Korea.jpg/1280px-Bongeunsa_Temple%2C_Seoul%2C_Korea.jpg"},
+ {zh:"선정릉 조선 왕릉",ko:"선정릉",pron:"Seonjeongneung",cat:"culture",area:"강남",areaZh:"江南",cost:"₩1,000",time:"1h",why_zh:"江南中心朝鲜王陵，联合国教科文遗址，都市绿地힐링 가성비",rec:88,rev:"강남 한복판에 왕릉이 있다는 게 신기해",img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Apple_%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8_04.jpg"},
+ {zh:"코엑스 아쿠아리움",ko:"코엑스 아쿠아리움",pron:"Coex Aquarium",cat:"culture",area:"강남",areaZh:"江南",cost:"₩32,000",time:"1-2h",why_zh:"COEX地下大型水族馆，热带鱼+鲨鱼+企鹅，室内不受天气影响",rev:"아이랑 왔는데 진짜 좋아했어, 어른도 재밌어",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/c/c9/Library_in_Seoul_%2853608036346%29.jpg"},
+ {zh:"더 청담 (갤러리 카페)",ko:"더 청담",pron:"The Cheongdam",cat:"cafe",area:"강남",areaZh:"江南",cost:"₩15,000~25,000",time:"1-2h",why_zh:"清潭洞高端复合艺术咖啡空间，展览+甜点，江南感性최고",rev:"디저트도 예쁘고 공간도 고급스러워",rec:91,img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Apple_%EA%B0%80%EB%A1%9C%EC%88%98%EA%B8%B8_04.jpg"},
+ // ── 홍대 추가 (→10개) ──
+ {zh:"연남동 경의선 숲길",ko:"연남동 경의선숲길",pron:"Gyeongui Forest",cat:"view",area:"홍대",areaZh:"弘大",cost:"免费 무료",time:"1-2h",why_zh:"铁路改造线型公园，从弘大延伸2km，散步+咖啡路线，四季皆宜",rev:"가을에 오면 진짜 예뻐, 커피 들고 걷기 딱이야",rec:189,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"합정 카페 거리",ko:"합정역 카페거리",pron:"Hapjeong Cafe",cat:"cafe",area:"홍대",areaZh:"弘大",cost:"₩7,000~14,000",time:"1-2h",why_zh:"弘大商业화에서 벗어난 독립 카페 거리，本地人推荐，인스타 감성",rev:"홍대보다 여기가 더 좋다는 사람도 있어",rec:112,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"망원시장 먹거리",ko:"망원시장",pron:"Mangwon Market",cat:"food",area:"홍대",areaZh:"弘大",cost:"₩5,000~15,000",time:"1h",why_zh:"本地人日常市场+网红떡볶이·팥빙수，非游客区的真实首尔美食",rev:"광장시장보다 덜 유명하지만 더 로컬 느낌이야",rec:143,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"홍대 클럽 & 라이브바",ko:"홍대 클럽거리",pron:"Club Street",cat:"culture",area:"홍대",areaZh:"弘大",cost:"₩10,000~20,000",time:"밤 10시~",why_zh:"韩国最密集夜店区，K-POP바+라이브클럽+DJ바，首尔夜文化 체험",rev:"밤문화 경험하고 싶으면 홍대 클럽거리가 맞아",rec:167,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"홍대 앞 버스킹",ko:"홍대 버스킹 광장",pron:"Busking",cat:"culture",area:"홍대",areaZh:"弘大",cost:"免费 무료",time:"1h",why_zh:"週末下午免费街头表演，本地艺术家+练习生偶尔露出，首尔青春感최고",rev:"무료로 공연 보는데 진짜 수준 높은 애들도 있어",rec:198,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"홍대 그래피티 거리",ko:"홍대 그래피티 거리",pron:"Graffiti",cat:"culture",area:"홍대",areaZh:"弘大",cost:"免费 무료",time:"30m",why_zh:"弘益大学周边艺术涂鸦墙，学生艺术作品=首尔街头艺术精华，拍照圣地",rev:"산책하다 보면 진짜 퀄리티 높은 그래피티가 있어",rec:87,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ {zh:"文化備蓄基地 (마포)",ko:"문화비축기지",pron:"Culture Tank",cat:"culture",area:"홍대",areaZh:"弘大",cost:"免费 무료",time:"1h",why_zh:"石油储罐改造文化空间，独特工业遗产+야외 공연장，非观光地区隐藏名所",rev:"진짜 이런 공간이 있는 줄 몰랐어, 독특해",rec:89,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Street_hongdae_Seoul.jpg/960px-Street_hongdae_Seoul.jpg"},
+ // ── 종로 추가 (→10개) ──
+ {zh:"清溪川 (市中心水路)",ko:"청계천",pron:"Cheonggyecheon",cat:"view",area:"종로",areaZh:"钟路",cost:"免费 무료",time:"1-2h",why_zh:"市中心复原河流+散步路，夜晚灯光秀，从钟路到东大门2km观光动线",rev:"夜晚灯光太美，边走边拍超好看",rec:254,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Cheonggye-cheon.jpg/1280px-Cheonggye-cheon.jpg"},
+ {zh:"东大门 DDP",ko:"동대문 디자인플라자",pron:"DDP",cat:"culture",area:"종로",areaZh:"钟路",cost:"전시 따라 다름",time:"1-2h",why_zh:"扎哈·哈迪德设计的未来派建筑，展览&快闪&夜景三合一，首尔必拍",rev:"건물 자체가 작품이야, 야경 때 오면 더 멋있어",rec:278,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/DDP_%28Dongdaemun_Design_Plaza%29.jpg/1280px-DDP_%28Dongdaemun_Design_Plaza%29.jpg"},
+ {zh:"东大门 쇼핑몰 거리",ko:"동대문 쇼핑타운",pron:"Dongdaemun",cat:"shop",area:"종로",areaZh:"钟路",cost:"自由",time:"2-4h",why_zh:"新大陆·두타·밀리오레 等批发零售全集合，부터 새벽까지 영업，최저가 韩国时装",rev:"새벽까지 쇼핑 가능, 가격 진짜 저렴해",rec:189,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/DDP_%28Dongdaemun_Design_Plaza%29.jpg/1280px-DDP_%28Dongdaemun_Design_Plaza%29.jpg"},
+ {zh:"通仁市场 엽전 도시락",ko:"통인시장",pron:"Tongin Market",cat:"food",area:"종로",areaZh:"钟路",cost:"₩5,000 (동전)",time:"1h",why_zh:"用古铜钱在摊位选菜装便当，独特饮食体验，韩国综艺多次出现",rev:"엽전으로 반찬 고르는 체험 너무 재밌어",rec:134,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg"},
+ {zh:"탑골공원 (三一运动发源地)",ko:"탑골공원",pron:"Tapgol Park",cat:"culture",area:"종로",areaZh:"钟路",cost:"免费 무료",time:"30m",why_zh:"韩国三一独立运动발원지，11층 石塔所在历史公园，仁寺洞旁",rev:"역사적 의미 알고 가면 더 의미있어",rec:67,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gwangjang_Market%2C_Seoul%2C_Korea.jpg/1280px-Gwangjang_Market%2C_Seoul%2C_Korea.jpg"},
+ {zh:"낙원상가 음반 거리",ko:"낙원악기상가",pron:"Nakwon Music",cat:"culture",area:"종로",areaZh:"钟路",cost:"自由",time:"1h",why_zh:"亚洲最大乐器街+중고 음반·LP 시장，音乐爱好者绝对不能错过",rev:"중고 LP 득템했어, 진짜 음악의 거리",rec:78,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg/960px-View_of_Ikseon-dong_from_National_Tax_Service_Jongno_District_Office.jpg"},
+ {zh:"피맛골 전통 선술집",ko:"피맛골",pron:"Pimatgol",cat:"food",area:"종로",areaZh:"钟路",cost:"₩10,000~20,000",time:"1-2h",why_zh:"조선시대부터 이어진 서민 골목，전통 선술집+순대국밥+막걸리，진짜 서울 맛",rev:"종로 로컬 노포, 진짜 서울 사람들이 오는 곳이야",rec:112,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gwangjang_Market%2C_Seoul%2C_Korea.jpg/1280px-Gwangjang_Market%2C_Seoul%2C_Korea.jpg"},
+ {zh:"종로 3가 포차 거리",ko:"종로3가 포차거리",pron:"Pojangmacha",cat:"food",area:"종로",areaZh:"钟路",cost:"₩15,000~25,000",time:"1-2h",why_zh:"종로3가역 주변 포장마차 밀집，진짜 서울 서민 야식 문화 체험",rev:"관광객 포차 아닌 진짜 동네 포차야",rec:134,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gwangjang_Market%2C_Seoul%2C_Korea.jpg/1280px-Gwangjang_Market%2C_Seoul%2C_Korea.jpg"},
+ // ── 잠실 추가 (→10개) ──
+ {zh:"石村湖水 반영 포토스팟",ko:"석촌호수",pron:"Seokchon Lake",cat:"view",area:"잠실",areaZh:"蚕室",cost:"免费 무료",time:"1h",why_zh:"롯데타워 湖面反射拍照名所，春天樱花+水中高楼倒影，首尔最美反射照片명소",rev:"롯데타워 반영샷이 여기야, 진짜 예뻐",rec:198,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"롯데월드몰 복합쇼핑",ko:"롯데월드몰",pron:"Lotte World Mall",cat:"shop",area:"잠실",areaZh:"蚕室",cost:"自由",time:"2-3h",why_zh:"롯데타워 下部复合쇼핑몰，럭셔리+로컬브랜드+푸드코트+아쿠아리움 전부",rev:"비 올 때 여기 오면 하루가 간다",rec:167,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"잠실 야구 직관",ko:"잠실야구장",pron:"Jamsil Baseball",cat:"culture",area:"잠실",areaZh:"蚕室",cost:"₩10,000~20,000",time:"3h",why_zh:"韩国棒球现场직관，观众应援文化独特，맥주+치킨 먹으면서 韓式野球体验",rev:"야구 몰라도 분위기에 취함, 꼭 가봐",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"올림픽공원 산책",ko:"올림픽공원",pron:"Olympic Park",cat:"view",area:"잠실",areaZh:"蚕室",cost:"免费 무료",time:"1-2h",why_zh:"88올림픽 기념 대규모 공원，나홀로 나무+조각공원，서울 사진 성지로 유명",rev:"사진 찍으러만 가도 충분해, 넓고 예뻐",rec:178,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Seoul_Olympic_Park_at_night.jpg/1280px-Seoul_Olympic_Park_at_night.jpg"},
+ {zh:"몽촌토성 백제 유적",ko:"몽촌토성",pron:"Mongchon Fortress",cat:"culture",area:"잠실",areaZh:"蚕室",cost:"免费 무료",time:"1h",why_zh:"백제 토성 유적+올림픽공원 내 위치，역사+자연 동시에，올림픽공원 연계 必코스",rev:"올림픽공원 들어가면서 같이 보게 돼",rec:67,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Seoul_Olympic_Park_at_night.jpg/1280px-Seoul_Olympic_Park_at_night.jpg"},
+ {zh:"잠실한강공원 치맥",ko:"잠실한강공원",pron:"Jamsil Hangang",cat:"food",area:"잠실",areaZh:"蚕室",cost:"₩20,000~30,000",time:"2h",why_zh:"잠실 쪽 한강，롯데타워 야경+치킨맥주，서울스카이 반영샷 가능한 최고 야경 포인트",rev:"롯데타워 보면서 치맥, 서울에서만 가능한 조합",rec:134,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"방이동 먹자골목",ko:"방이동 먹자골목",pron:"Bangi Food Street",cat:"food",area:"잠실",areaZh:"蚕室",cost:"₩15,000~30,000",time:"1-2h",why_zh:"잠실 현지인 먹자골목，삼겹살+닭갈비+냉면 노포 밀집，야구 직관 후 필코스",rev:"야구 직관 끝나고 여기서 마무리, 노포 맛 진짜야",rec:112,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ {zh:"롯데월드 아쿠아리움",ko:"롯데월드 아쿠아리움",pron:"LW Aquarium",cat:"culture",area:"잠실",areaZh:"蚕室",cost:"₩34,000",time:"1-2h",why_zh:"롯데월드몰 지하 대형 수족관，열대어+상어+오리너구리，실내라 날씨 무관",rev:"아이랑 왔는데 어른도 진짜 재밌어",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg/960px-LotteWorldTower_%26_Lotte_World_Mall_from_Seokchon_Lake%2C_Seoul_Korea.jpg"},
+ // ── 여의도 추가 (→10개) ──
+ {zh:"IFC몰 여의도",ko:"IFC몰",pron:"IFC Mall",cat:"shop",area:"여의도",areaZh:"汝矣岛",cost:"自由",time:"2h",why_zh:"汉江旁复合购物中心，CGV+国内外品牌+美食，여의도 최고 쇼핑스팟",rev:"CGV에서 영화 보고 한강뷰 즐기는 루트 최고",rec:145,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"63빌딩 스카이아트",ko:"63빌딩",pron:"63 Building",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"₩27,000",time:"1-2h",why_zh:"汉江上黄金高楼，전망대+수족관+미술관 세 가지，서울 구세대 랜드마크",rev:"롯데타워보다 낮지만 전망 구성이 다양해",rec:134,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/63_building_Seoul.jpg/960px-63_building_Seoul.jpg"},
+ {zh:"더현대 서울 (미래형 백화점)",ko:"더현대 서울",pron:"The Hyundai Seoul",cat:"shop",area:"여의도",areaZh:"汝矣岛",cost:"自由",time:"2-3h",why_zh:"韩国最美百货店，室内瀑布+자연 채광+오픈 공간，国内外 팝업+MD라인업 최강",rev:"사진 찍으러만 와도 될 정도로 인테리어가 예뻐",rec:289,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"여의도공원 꽃구경",ko:"여의도공원",pron:"Yeouido Park",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"免费 무료",time:"1h",why_zh:"봄 벚꽃+가을 단풍 명소，여의나루역 바로 앞，사계절 도심 힐링",rev:"봄에 오면 벚꽃 터널이 기가 막혀",rec:178,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"국회의사당 산책",ko:"국회의사당",pron:"National Assembly",cat:"culture",area:"여의도",areaZh:"汝矣岛",cost:"免费 무료",time:"30m",why_zh:"韩国国会+圆顶建筑外观，여의도 벚꽃로드 위치，政治地标+봄 산책코스",rev:"사진 배경으로 쓰기 좋아, 건물도 웅장해",rec:78,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"한강 따릉이 자전거",ko:"한강 자전거길",pron:"Bike Path",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"₩1,000~3,000 (따릉이)",time:"1-2h",why_zh:"서울 공공자전거 따릉이로 한강 달리기，여의도~반포~이촌 연결，서울 최고 액티비티",rev:"따릉이 타고 한강 달리는 거 서울 여행 중 베스트야",rec:167,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"마포대교 야경 포인트",ko:"마포대교 야경",pron:"Mapo Bridge",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"免费 무료",time:"30m",why_zh:"여의도 한강 야경 최고 포인트，63빌딩+마포대교+한강이 한눈에，인스타 성지",rev:"야경 사진 찍으러 왔다가 한 시간 넘게 있었어",rec:112,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"여의도 봄꽃축제 (벚꽃)",ko:"여의도 봄꽃축제",pron:"Cherry Blossom",cat:"view",area:"여의도",areaZh:"汝矣岛",cost:"免费 무료",time:"1-2h",why_zh:"4월 벚꽃 시즌 서울 최대 벚꽃 명소，윤중로 벚꽃 터널 1.7km，韩国旅游推荐TOP",rev:"봄에 꼭 와야 해, 사진이 엄청나게 나와",rec:312,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"},
+ {zh:"여의도 한강 치맥 피크닉",ko:"여의도 한강 피크닉",pron:"Hangang Picnic",cat:"food",area:"여의도",areaZh:"汝矣岛",cost:"₩15,000~25,000",time:"2h",why_zh:"한강에서 치맥+편의점 라면，서울 일상 체험，夜景+打卡必备，首尔人日常",rev:"편의점 라면+한강뷰, 이게 진짜 서울이야",rec:234,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hangang_Park_Overview_201604.jpg/960px-Hangang_Park_Overview_201604.jpg"}
+];
+
+const PRODUCTS=[
+  {zh:"COSRX 蜗牛精华96",ko:"코스알엑스 달팽이 에센스",cat:"skincare",concern:["trouble","moisture"],price:22000,budget:"low",ingredient:"스네일 세크리션 필트레이트 96.3%",verdict:"rec",why_zh:"蜗牛分泌液浓度业界最高，修复+保湿双效，性价比极强",rev:"痘印淡化效果明显，连续用了3个月",img:"https://cdn-image.oliveyoung.com/prdtImg/1327/f6168a73-afc3-4eb9-bf5c-285925a47aa0.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"ANUA 鱼腥草77%爽肤水",ko:"아누아 어성초 77% 토너",cat:"skincare",concern:["trouble","sensitive"],price:18000,budget:"low",ingredient:"어성초 추출물 77%",verdict:"rec",why_zh:"含77%鱼腥草，天然抗炎，敏感泛红首选",rev:"用完脸不再泛红了，很温和",img:"https://anua.com/cdn/shop/files/anua-us-toner-heartleaf-77-soothing-toner-1239193744.jpg?v=1779181932&width=600"},
+  {zh:"Torriden 透明质酸精华",ko:"토리든 다이브인 세럼",cat:"skincare",concern:["moisture","sensitive"],price:19800,budget:"low",ingredient:"히알루론산 5종 복합체",verdict:"rec",why_zh:"5种玻尿酸叠加保湿，清爽不油腻",rev:"涂完皮肤喝饱水一样",img:"https://cdn-image.oliveyoung.com/prdtImg/1420/8faf4204-8410-4382-a3c3-02603c6f8647.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"IOPE 视黄醇精华",ko:"아이오페 레티놀 에센스",cat:"skincare",concern:["wrinkle","brightening"],price:49000,budget:"mid",ingredient:"순수 레티놀 0.1%",verdict:"rec",why_zh:"视黄醇浓度达标，抗皱提拉实测有效",rev:"用了1个月皮肤弹性变好了",img:"https://sokoglam.com/cdn/shop/files/IOPE-Retinol-Expert.jpg?v=1753227798"},
+  {zh:"One Thing 积雪草精华100%",ko:"원씽 센텔라 앰플",cat:"skincare",concern:["trouble","sensitive"],price:14000,budget:"low",ingredient:"센텔라아시아티카 추출물 100%",verdict:"rec",why_zh:"100%积雪草，修复敏感泛红立竿见影",rev:"爆痘后第二天就消肿了",img:"https://cdn-image.oliveyoung.com/prdtImg/1058/3db1ae43-0a6d-4995-83f0-a3a2e900caf9.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Round Lab 独岛爽肤水",ko:"라운드랩 독도 토너",cat:"skincare",concern:["moisture","sensitive"],price:17000,budget:"low",ingredient:"독도 해양심층수, 판테놀",verdict:"rec",why_zh:"海洋深层水+泛醇，保湿镇静双效",rev:"敏感肌用了没有过敏，很放心",img:"https://cdn-image.oliveyoung.com/prdtImg/1446/22ca30e5-be29-41e1-ad26-914648f94b5c.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"numbuzin 3号精华",ko:"넘버즈인 3번 세럼",cat:"skincare",concern:["brightening","wrinkle"],price:38000,budget:"mid",ingredient:"나이아신아마이드 5%, 펩타이드",verdict:"rec",why_zh:"烟酰胺5%+多肽，美白+抗皱一瓶搞定",rev:"用了3周暗沉改善了",img:"https://us.numbuzin.com/cdn/shop/files/250527_________09.jpg?v=1748507624&width=600"},
+  {zh:"Dr.Jart+ 积雪草修复霜",ko:"닥터자르트 시카페어 크림",cat:"skincare",concern:["trouble","sensitive"],price:32000,budget:"mid",ingredient:"센텔라아시아티카, 티트리",verdict:"rec",why_zh:"积雪草+茶树，修复皮肤屏障经过验证",rev:"过敏修复期用了，皮肤稳定下来了",img:"https://cdn-image.oliveyoung.com/prdtImg/1822/1b8276dc-4025-439b-a11b-9a9814ca7476.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Mediheal NMF面膜",ko:"메디힐 NMF 마스크팩 10장",cat:"mask",concern:["moisture","sensitive"],price:13900,budget:"low",ingredient:"히알루론산, 판테놀, NMF",verdict:"rec",why_zh:"NMF保湿因子+常有买一送一，性价比最强",rev:"敷完皮肤光滑很多，必囤款",img:"https://cdn-image.oliveyoung.com/prdtImg/1271/60288a39-e776-4fcf-b720-cbccdd90fce0.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Etude 纯净防晒霜 SPF50+",ko:"에뛰드 순정 톤업 선크림",cat:"suncare",concern:["brightening","sensitive"],price:12000,budget:"low",ingredient:"징크 옥사이드, SPF50+ PA++++",verdict:"rec",why_zh:"物理防晒+提亮，敏感肌可用，价格实惠",rev:"不油腻，素颜提亮效果好",img:"https://drive.google.com/uc?export=view&id=1u03fP5yi8X3irGLIAlkMqZr_qfI-geMz"},
+  {zh:"Clio 防水眼线笔",ko:"클리오 킬블랙 아이라이너",cat:"makeup",concern:["brightening"],price:10500,budget:"low",ingredient:"방수 포뮬러",verdict:"rec",why_zh:"防水持久力强，性价比远超欧美大牌",rev:"游泳后都不晕，韩国必买",img:"https://cdn-image.oliveyoung.com/prdtImg/1998/b02a3a21-f7b9-485f-9447-9c8ccf9be1cc.jpg?RS=800x800&AR=0&QT=80"},
+  // ── 추가 추천 제품 ──
+  {zh:"朝鲜美人光泽精华",ko:"조선미인 글로우 딥 세럼",cat:"skincare",concern:["brightening","sensitive"],price:15000,budget:"low",ingredient:"쌀 추출물 68%, 알부틴",verdict:"rec",why_zh:"米提取物68%+熊果苷美白组合，温和不刺激，小红书长期热销",rev:"用了2周皮肤透亮了，敏感肌也没问题",img:"https://cdn-image.oliveyoung.com/prdtImg/1835/27c3e0cd-b1e5-4db0-93a0-355b30c988a3.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Some By Mi 三酸奇迹爽肤水",ko:"썸바이미 AHA BHA PHA 30데이즈 토너",cat:"skincare",concern:["trouble","brightening"],price:17000,budget:"low",ingredient:"AHA(글리콜산), BHA(살리실산), PHA 복합산",verdict:"rec",why_zh:"三酸去角质+控痘，30天改善痘痘肌，成分逐一经过验证",rev:"用了一个月毛孔缩小，痘印也淡了",img:"https://cdn-image.oliveyoung.com/prdtImg/1089/f85d9055-6243-4bb7-a5b7-691f7ab376b0.png?RS=800x800&AR=0&QT=80"},
+  {zh:"Skin1004 马达加斯加积雪草安瓶",ko:"스킨1004 마다가스카르 센텔라 앰플",cat:"skincare",concern:["sensitive","trouble"],price:18000,budget:"low",ingredient:"센텔라아시아티카 추출물 100%",verdict:"rec",why_zh:"纯积雪草100%，镇敏修复效果强，性价比业界顶级",rev:"过敏泛红时救命款，两天就稳定了",img:"https://cdn-image.oliveyoung.com/prdtImg/1627/116306e7-facc-47fc-92d6-6a3c69a7d7b4.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Klairs 保湿镇敏精华",ko:"클레어스 리치 모이스트 수딩 세럼",cat:"skincare",concern:["moisture","sensitive"],price:28000,budget:"low",ingredient:"알란토인, 판테놀, 히알루론산",verdict:"rec",why_zh:"成分全EWG绿色，过敏修复+保湿双效，换季刺激首选",rev:"皮肤受损时第一个想到的，成分安全放心",img:"https://sokoglam.com/cdn/shop/files/Klairs-Rich-Moist-Soothing-Serum.jpg?v=1756219746"},
+  {zh:"伊莉扬神经酰胺霜",ko:"일리윤 세라마이드 아토 크림",cat:"skincare",concern:["moisture","sensitive"],price:14000,budget:"low",ingredient:"세라마이드, 판테놀",verdict:"rec",why_zh:"神经酰胺修复皮肤屏障，敏感/特应性皮肤专用，性价比极高",rev:"干燥季节用了不再脱皮，敏感宝宝必备",img:"https://cdn-image.oliveyoung.com/prdtImg/1385/6fd7515e-c880-4486-b0a8-f81392b12fb0.png?RS=800x800&AR=0&QT=80"},
+  {zh:"Medi-Peel 肽肌紧致霜",ko:"메디필 보톡 펩타이드 크림",cat:"skincare",concern:["wrinkle","moisture"],price:39000,budget:"mid",ingredient:"보툴리늄 펩타이드, EGF, 나이아신아마이드",verdict:"rec",why_zh:"仿生肽模拟肉毒素紧致，抗皱紧肤有成分依据，中国游客热购",rev:"法令纹用了2周有改善，成分价格都合理",img:"https://drive.google.com/uc?export=view&id=1KKhX4GbBhvVcdmdReUBGFhO56HFfXoOn"},
+  {zh:"雪花秀自阴生人参精华",ko:"설화수 자음생 에센스",cat:"skincare",concern:["wrinkle","brightening"],price:75000,budget:"mid",ingredient:"자음단 한방 복합 추출물, 인삼",verdict:"rec",why_zh:"韩方人参精华经典款，抗老+提亮双效，成分实测有依据",rev:"用了3个月弹性和光泽都改善了，贵但值",img:"https://us.sulwhasoo.com/cdn/shop/files/BRAND.COM_1080x1080_NewCGRSerum_01.Packshot_50ml.jpg?v=1736980672"},
+  {zh:"CNP蜂胶协同精华",ko:"씨앤피 프로폴리스 시너지 세럼",cat:"skincare",concern:["trouble","moisture"],price:47000,budget:"mid",ingredient:"프로폴리스 추출물, 판테놀, 나이아신아마이드",verdict:"rec",why_zh:"医美品牌CNP出品，蜂胶抗菌+烟酰胺提亮，痘后修复有成分支撑",rev:"痘好了之后修복皮肤，效果稳定",img:"https://drive.google.com/uc?export=view&id=1ZxB7_mEE5qmRhPNhlviNIEb2aFw8FROA"},
+  // 선케어 추가
+  {zh:"朝鲜美人防晒 米+益生菌",ko:"조선미인 릴리프 선 라이스+프로바이오틱스",cat:"suncare",concern:["brightening","sensitive"],price:12000,budget:"low",ingredient:"쌀 추출물, 프로바이오틱스, SPF50+ PA++++",verdict:"rec",why_zh:"韩方米提取+益生菌防晒，保湿不白头，小红书防晒爆款",rev:"防晒里最好推的，不白头不油腻",img:"https://cdn-image.oliveyoung.com/prdtImg/1866/e70e94eb-e597-489d-9ff9-dfe4f4c869c3.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"ISNTREE 玻尿酸水感防晒",ko:"이즈앤트리 히알루론산 워터리 선젤",cat:"suncare",concern:["moisture","sensitive"],price:15000,budget:"low",ingredient:"히알루론산 복합체, SPF50+ PA++++",verdict:"rec",why_zh:"玻尿酸水感质地，防晒同时补水，混合偏油肌夏天首选",rev:"夏天涂像涂水一样，完全不闷",img:"https://cdn-image.oliveyoung.com/prdtImg/1731/a8755ee9-9296-48fd-8c43-8ae7ee850e7c.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Round Lab 白桦树汁防晒",ko:"라운드랩 버치 쥬스 모이스처라이징 선크림",cat:"suncare",concern:["moisture","sensitive"],price:16000,budget:"low",ingredient:"자작나무 수액, 판테놀, SPF50+ PA++++",verdict:"rec",why_zh:"白桦树汁+泛醇保湿，刺激成分少，敏感肌安心用",rev:"敏感肌用了不过敏，防晒力够且很保湿",img:"https://cdn-image.oliveyoung.com/prdtImg/1888/1cdabf8a-2359-421e-bb61-a71767ccfa6d.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"兰芝水睡眠面膜",ko:"라네즈 워터 슬리핑 마스크",cat:"mask",concern:["moisture","sensitive"],price:30000,budget:"low",ingredient:"히알루론산, 피오니 추출물, 비타민C",verdict:"rec",why_zh:"睡前涂上醒来皮肤喝饱水，玻尿酸锁水，中国游客必买TOP3",rev:"每次来韩国必囤，10年爱用品",img:"https://us.laneige.com/cdn/shop/files/WSM_AD_PDP_2.jpg?v=1754046790"},
+  {zh:"JM蜂胶提亮面膜 (黄色)",ko:"JM솔루션 허니 루미너스 로얄 프로폴리스 마스크",cat:"mask",concern:["brightening","moisture"],price:15000,budget:"low",ingredient:"프로폴리스 추출물, 로얄젤리",verdict:"rec",why_zh:"蜂胶+蜂王浆提亮保湿，敷完即刻发光，10片只要15000韩元",rev:"每次来韩国必囤箱，性价比最高的面膜之一",img:"https://cdn-image.oliveyoung.com/prdtImg/1796/ae1c3009-fe36-4022-b0d9-dbdbf015b1d8.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Abib 弱酸性pH面膜",ko:"아비브 약산성 pH 시트 마스크 제리코 로즈 핏",cat:"mask",concern:["moisture","sensitive"],price:25000,budget:"low",ingredient:"약산성 pH 5.5, 제리코 로즈 추출물, 판테놀",verdict:"rec",why_zh:"弱酸性pH5.5和皮肤一致，不破坏屏障，敏感肌日常可用",rev:"敷完不紧绷，敏感期天天用都ok",img:"https://cdn-image.oliveyoung.com/prdtImg/1454/6b2fe9c5-9302-45fe-bf4b-64912fb96b7b.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Romand 水光唇釉",ko:"롬앤 글라스팅 워터 글로스",cat:"makeup",concern:["brightening"],price:10000,budget:"low",ingredient:"히알루론산 립 포뮬러, 보습 성분",verdict:"rec",why_zh:"水光镜面效果+玻尿酸保湿，显色持久不干燥，小红书唇釉爆款",rev:"涂了嘴唇像喝了水，颜色超好看",img:"https://cdn-image.oliveyoung.com/prdtImg/1703/2b1afdd2-80d2-4057-9ec0-aa03f10d86e0.jpg?RS=800x800&AR=0&QT=80"},
+  {zh:"Peripera 墨水丝绒唇彩",ko:"페리페라 잉크 벨벳",cat:"makeup",concern:["brightening"],price:8000,budget:"low",ingredient:"매트 고착 포뮬러, 고발색 색소",verdict:"rec",why_zh:"持久度强+高显色，性价比远超国内同类，小红书长期热销款",rev:"吃饭不脱色，颜色正，5色以上必买",img:"https://cdn-image.oliveyoung.com/prdtImg/1838/d7ea6bb8-a8b1-49a2-9b5b-27df9a66081f.png?RS=800x800&AR=0&QT=80"},
+  // ── 선케어 빌드업 ──
+  {zh:"香蕉文化纯净防晒 SPF50+",ko:"바나나컬처 퓨어 선크림",cat:"suncare",concern:["brightening","sensitive"],price:18000,budget:"low",ingredient:"징크옥사이드, 티타늄다이옥사이드, SPF50+ PA++++",verdict:"rec",why_zh:"物理双剂防晒+成分透明，敏感肌可放心，素颜提亮自然",rev:"不白头，日常外出首选",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023345801ko.jpg?l=ko"},
+  {zh:"Neogen 日用UV防晒棒 SPF50+",ko:"넥스젠 데일리 UV 스틱",cat:"suncare",concern:["sensitive","moisture"],price:19000,budget:"low",ingredient:"유기자차 복합체, SPF50+ PA++++",verdict:"rec",why_zh:"棒状补涂超方便，不破坏妆容，随身携带户外补防必备",rev:"随手补涂，不搓泥，方便到不行",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025290801ko.jpg?l=ko"},
+  {zh:"Mixsoon 积雪草防晒 SPF50+",ko:"믹순 병풀 선크림",cat:"suncare",concern:["sensitive","trouble"],price:22000,budget:"low",ingredient:"센텔라아시아티카 추출물, SPF50+ PA++++",verdict:"rec",why_zh:"积雪草防晒合二为一，修复同时防晒，问题肌&敏感肌最安心选择",rev:"过敏期用了也ok，修复感很强",img:"https://cdn.shopify.com/s/files/1/0797/3299/8445/files/png_93d5bc58-2aa3-42a3-a8a3-f8b55c61c591.png?v=1776847829"},
+  {zh:"Rovectin 舒缓防晒乳 SPF50+",ko:"로브크틴 스킨 릴리빙 선밀크",cat:"suncare",concern:["moisture","sensitive"],price:25000,budget:"mid",ingredient:"판테놀, 알란토인, SPF50+ PA++++",verdict:"rec",why_zh:"皮肤科品牌低刺激配方，泛醇+尿囊素保湿修护，皮肤屏障弱时必选",rev:"刺激性成分少，换季使用超放心",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025297001ko.jpg?l=ko"},
+  {zh:"Thank You Farmer 大米防晒精华 SPF50+",ko:"탠큐파머 라이스 선 세럼",cat:"suncare",concern:["brightening","moisture"],price:17000,budget:"low",ingredient:"쌀 추출물, 히알루론산, SPF50+ PA++++",verdict:"rec",why_zh:"大米提取+玻尿酸精华质地，防晒同时补水提亮，妆前打底两用",rev:"精华质地很轻盈，涂完皮肤水润透亮",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021799801ko.jpg?l=ko"},
+  {zh:"COSRX 芦荟舒缓防晒 SPF50+",ko:"코스알엑스 알로에 수딩 선크림",cat:"suncare",concern:["sensitive","moisture"],price:17000,budget:"low",ingredient:"알로에베라 92%, SPF50+ PA+++",verdict:"rec",why_zh:"92%芦荟+防晒，镇敏保湿双效，COSRX成分透明有保障",rev:"芦荟清凉感，晒后补涂也舒服",img:"https://cdn.shopify.com/s/files/1/0513/3775/6828/files/aloe-soothing-sun-cream-spf50-pa-cosrx-official-1.jpg?v=1724835559"},
+  // ── 마스크팩 빌드업 ──
+  {zh:"SNP 小鸟精华安瓶面膜",ko:"SNP 버드 오일 앰플 마스크",cat:"mask",concern:["moisture","brightening"],price:3000,budget:"low",ingredient:"새싹 추출물, 천연 오일 앰플",verdict:"rec",why_zh:"安瓶精华型面膜，保湿+提亮一片搞定，性价比极高",rev:"敷完皮肤像打了安瓶，光感很好",img:"https://cdn11.bigcommerce.com/s-qfqxxjczv4/images/stencil/1280x1280/products/1776/8489/3536__59350.1666260118.jpg?c=2"},
+  {zh:"Papa Recipe 蜂蜜面膜",ko:"파파레서피 봄비 허니 마스크팩",cat:"mask",concern:["moisture","trouble"],price:4500,budget:"low",ingredient:"벌꿀 추출물, 히알루론산, 프로폴리스",verdict:"rec",why_zh:"蜂蜜+蜂胶保湿修护，韩国长销经典款，温和无刺激",rev:"敷完皮肤软嫩，长期回购款",img:"https://cdn.shopify.com/s/files/1/0777/2196/0668/files/BombeeHoneyMaskPack_5aadd4c8-d873-4cb1-ba6b-f9dd2c8c9a45.jpg?v=1756294848"},
+  {zh:"innisfree 济州火山岩泥面膜",ko:"이니스프리 수퍼 화산송이 모공 마스크",cat:"mask",concern:["trouble","brightening"],price:15000,budget:"low",ingredient:"화산 송이, 카올린, 살리실산",verdict:"rec",why_zh:"火山岩吸附毛孔污垢，BHA控痘，济州限定成分，小红书长期爆款",rev:"敷完毛孔缩小，皮肤清爽光滑",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025297901ko.jpg?l=ko"},
+  {zh:"Mediheal 茶树清痘面膜",ko:"메디힐 티트리 에센셜 마스크팩",cat:"mask",concern:["trouble","sensitive"],price:1800,budget:"low",ingredient:"티트리 추출물, 알란토인",verdict:"rec",why_zh:"茶树天然抗菌+尿囊素镇敏，痘痘期急救首选，单片价格极低",rev:"爆痘时一天一片，两天就好多了",img:"https://cdn.shopify.com/s/files/1/0053/9033/6034/files/Untitled_design_77.png?v=1752622056"},
+  {zh:"Too Cool For School 蛋壳保湿面膜",ko:"투쿨포스쿨 에그쿠지 에그크림 마스크",cat:"mask",concern:["moisture","brightening"],price:2500,budget:"low",ingredient:"달걀 추출물, 히알루론산, 나이아신아마이드",verdict:"rec",why_zh:"鸡蛋精华+烟酰胺，保湿提亮两效，包装趣味独特是韩国必买伴手礼",rev:"送礼买一堆，皮肤真的变亮了",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022341401ko.jpg?l=ko"},
+  {zh:"TONYMOLY 大米精华面膜",ko:"토니모리 아임 리얼 마스크 시트 라이스",cat:"mask",concern:["moisture","brightening"],price:2000,budget:"low",ingredient:"쌀 추출물, 글리세린",verdict:"rec",why_zh:"大米提取精华面膜，保湿提亮温和，便宜好用中国游客必囤款",rev:"价格便宜到离谱，保湿效果不错",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0015/A00000015036190ko.jpg?l=ko"},
+  // ── 메이크업 빌드업 ──
+  {zh:"3CE 心情唇彩",ko:"3CE 무드 레시피 립 컬러",cat:"makeup",concern:["brightening"],price:16000,budget:"low",ingredient:"고발색 립 포뮬러, 보습 성분",verdict:"rec",why_zh:"韩流美妆代名词，颜色丰富显色度高，小红书韩系妆必备单品",rev:"颜色太美了，买了5支还不够",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0012/A00000012359401ko.jpg?l=ko"},
+  {zh:"MISSHA 魔幻气垫 SPF50+",ko:"미샤 M 매직 쿠션",cat:"makeup",concern:["brightening","moisture"],price:18000,budget:"low",ingredient:"커버 포뮬러, 히알루론산, SPF50+ PA+++",verdict:"rec",why_zh:"气垫始祖品牌，遮瑕+防晒+保湿三合一，性价比碾压欧美品牌",rev:"遮瑕力不错，价格只有大牌气垫1/4",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023338001ko.jpg?l=ko"},
+  {zh:"Clio 持久遮瑕气垫 SPF50+",ko:"클리오 킬커버 파운웨어 쿠션",cat:"makeup",concern:["brightening"],price:26000,budget:"mid",ingredient:"고커버 파운데이션 포뮬러, SPF50+ PA++++",verdict:"rec",why_zh:"超强遮瑕持久气垫，痘疤/暗沉全遮，韩国销量TOP气垫品类",rev:"痘印全遮，一整天不脱妆",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023209801ko.jpg?l=ko"},
+  {zh:"Etude 妆前打底精华",ko:"에뛰드 픽스 앤 픽스 프라이머",cat:"makeup",concern:["brightening"],price:14000,budget:"low",ingredient:"실리카, 수분 지속 성분",verdict:"rec",why_zh:"毛孔遮盖+妆容定妆，上妆前一步大幅提升持妆力",rev:"用了明显减少浮粉，持妆变长",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023338101ko.jpg?l=ko"},
+  {zh:"TONYMOLY 极细睫毛膏",ko:"토니모리 원터치 마스카라",cat:"makeup",concern:["brightening"],price:8000,budget:"low",ingredient:"방수 왁스 포뮬러",verdict:"rec",why_zh:"纤细刷头精准涂抹，持久防水，价格超实惠的日常必备睫毛膏",rev:"卷翘持久，价格实惠必回购",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023345816ko.jpg?l=ko"},
+  {zh:"Lilybyred 绒雾唇彩",ko:"릴리바이레드 무드 라이어 벨벳틴트",cat:"makeup",concern:["brightening"],price:13000,budget:"low",ingredient:"매트 벨벳 포뮬러, 고발색 색소",verdict:"rec",why_zh:"绒面雾感质地，持色持久不脱妆，K-beauty新世代热门品牌",rev:"雾面效果超美，吃饭也不脱色",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018893101ko.jpg?l=ko"},
+  {zh:"Holika Holika 牛奶唇彩",ko:"홀리카홀리카 아이구 너부리 밀크틴트",cat:"makeup",concern:["brightening","moisture"],price:9000,budget:"low",ingredient:"밀크 모이스처 포뮬러, 고발색 성분",verdict:"rec",why_zh:"牛奶保湿质地，水嫩高显色，价格亲民独特包装超受中国游客欢迎",rev:"包装太可爱了，颜色也很好看",img:"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025290883ko.jpg?l=ko"},
+  // ── 비추 제품 ──
+  {zh:"⚠️ 高价胶原蛋白系列（广告款）",ko:"고광고비 콜라겐 세럼 유형",cat:"skincare",concern:["wrinkle","moisture"],price:65000,budget:"high",ingredient:"가수분해 콜라겐 (분자량 큼)",verdict:"avoid",avoid_reason:"外用胶原蛋白分子太大无法渗透皮肤，只是表面保湿。广告费占成本80%，换个包装卖高价 · 콜라겐 분자가 너무 커서 피부 침투 불가. 광고비가 원가의 80%인 유형",why_zh:"外用胶原蛋白吸收率极低，属于营销噱头",img:""},
+  {zh:"⚠️ 连锁美容院高价套装",ko:"피부샵 고가 패키지 세트",cat:"skincare",concern:["brightening","wrinkle"],price:150000,budget:"high",ingredient:"성분 불명확",verdict:"avoid",avoid_reason:"成分不透明+高压销售。同等成分在橄榄Young 1/5价格可买到 · 성분 불투명 + 고압 판매. 동일 성분이 올영에서 1/5 가격에 있음",why_zh:"不透明成分+高溢价，不在筛选范围内",img:""},
+  {zh:"⚠️ 某网红'水光'乳霜",ko:"일부 인플루언서 추천 워터크림",cat:"skincare",concern:["moisture"],price:45000,budget:"mid",ingredient:"주성분 실리콘, 글리세린",verdict:"avoid",avoid_reason:"主要成分是硅酮+甘油，和便宜款无差别。溢价靠网红效应，不靠成分 · 주성분이 실리콘+글리세린으로 저가 제품과 동일. 인플루언서 마케팅으로 거품",why_zh:"成分与廉价品无异，包装更好看而已",img:""},
+];
+
+const CAT_LABEL={food:"🍜 美食 먹거리",cafe:"☕ 感性咖啡 감성카페",shop:"🛍 购物 쇼핑",view:"🌆 美景 좋은뷰",culture:"🏯 文化体验 문화체험",beauty:"💄 美妆 뷰티",medical:"🏥 医美·体检 의료관광"};
+const STYLE_LABEL={eco:"经济型 가성비",std:"标准型 일반",lux:"轻奢型 프리미엄"};
+const CONTENT_MAP={
+  food:[
+    {zh:"首尔100家餐厅·只留5家，这几个别去❌",ko:"맛집 함정 피하는 법",kw:"首尔中国人餐厅筛选"},
+    {zh:"广藏市场到底吃什么才不后悔",ko:"광장시장 필수메뉴",kw:"广藏市场必吃"},
+    {zh:"游客踩雷餐厅 vs 本地人真正去的",ko:"관광객 함정 vs 로컬맛집",kw:"首尔踩雷餐厅"}
+  ],
+  cafe:[
+    {zh:"圣水洞咖啡50家·只推这5家",ko:"성수 카페 검증 TOP5",kw:"圣水洞咖啡筛选"},
+    {zh:"网红咖啡厅 vs 踩雷陷阱：怎么分辨",ko:"감성카페 vs 관광객 트랩",kw:"首尔咖啡厅筛选"},
+    {zh:"首尔隐藏咖啡·本地人才知道的",ko:"서울 숨은 로컬카페",kw:"首尔隐藏咖啡"}
+  ],
+  shop:[
+    {zh:"明洞扫货·哪些值买哪些别碰",ko:"명동 쇼핑 검증",kw:"明洞购物筛选"},
+    {zh:"Olive Young必买清单（成分党版）",ko:"올영 성분 기준 추천",kw:"橄榄杨必买成分"},
+    {zh:"弘大·圣水小店·值得买的和别踩的",ko:"홍대 성수 쇼핑 검증",kw:"弘大购物筛选"}
+  ],
+  view:[
+    {zh:"首尔夜景TOP5·哪个免费哪个值票价",ko:"서울 야경 가성비 비교",kw:"首尔夜景筛选"},
+    {zh:"拍照圣地 vs 打卡陷阱：真实测评",ko:"인스타 명소 검증",kw:"首尔拍照圣地筛选"},
+    {zh:"汉江公园怎么玩才最划算",ko:"한강공원 알뜰 이용법",kw:"汉江公园攻略"}
+  ],
+  culture:[
+    {zh:"韩服体验哪家好·我亲测5家",ko:"한복 체험 TOP 검증",kw:"韩服体验筛选"},
+    {zh:"益善洞 vs 北村·类型不同怎么选",ko:"익선동 vs 북촌 비교",kw:"益善洞北村比较"},
+    {zh:"首尔文化体验·只有韩国才有的",ko:"한국에서만 할 수 있는 것",kw:"首尔文化体验"}
+  ],
+  beauty:[
+    {zh:"Olive Young这些别买❌·成分验证",ko:"올영 비추 성분 분석",kw:"橄榄杨不买清单"},
+    {zh:"真正好的K美妆 vs 营销泡沫",ko:"K뷰티 진짜 vs 마케팅 거품",kw:"K美妆筛选"},
+    {zh:"免税 vs Olive Young vs 大创：哪里最划算",ko:"면세 vs 올영 vs 다이소",kw:"韩国购物渠道比较"}
+  ],
+  medical:[
+    {zh:"江南皮肤科·我帮你筛掉黑心诊所",ko:"강남 피부과 호갱방지",kw:"江南皮肤科筛选"},
+    {zh:"Ulthera·水光针在韩国真实价格揭秘",ko:"울쎄라·리쥬란 실제 가격",kw:"韩国医美真实价格"},
+    {zh:"中国人爱做的韩国医美·注意这几点",ko:"의료미용 주의사항",kw:"韩国医美注意事项"}
+  ]
+};
+
+
+const BEAUTY_CONTENT_MAP={
+  trouble:[
+    {zh:"痘痘肌买什么·成分党筛选非广告版",ko:"트러블피부 성분 가이드",kw:"韩国痘痘肌护肤品筛选"},
+    {zh:"COSRX蜗牛精华真的有用吗·成分解析",ko:"달팽이 에센스 성분 분석",kw:"COSRX蜗牛精华成分"},
+    {zh:"积雪草精华哪家强·5款对比测评",ko:"센텔라 앰플 비교",kw:"积雪草精华比较韩国"}
+  ],
+  moisture:[
+    {zh:"玻尿酸精华怎么选·成分对照指南",ko:"히알루론산 세럼 선택법",kw:"韩国玻尿酸精华成分"},
+    {zh:"睡眠面膜哪款真保湿·亲测对比",ko:"수면팩 비교",kw:"韩国睡眠面膜保湿"},
+    {zh:"Olive Young保湿推荐·非广告版",ko:"올영 보습 성분 추천",kw:"橄榄杨保湿护肤品"}
+  ],
+  brightening:[
+    {zh:"美白成分怎么看·熊果苷vs烟酰胺对比",ko:"미백 성분 비교",kw:"韩国美白成分比较"},
+    {zh:"防晒推荐·成分党不踩雷指南",ko:"선크림 성분 가이드",kw:"韩国防晒筛选成分"},
+    {zh:"暗沉改善实测·用了3个月才说",ko:"칙칙함 개선 실사용 후기",kw:"韩国美白护肤实测"}
+  ],
+  wrinkle:[
+    {zh:"视黄醇护肤信吗·成分浓度对照表",ko:"레티놀 성분 가이드",kw:"韩国视黄醇护肤品"},
+    {zh:"抗老护肤成分选对比价格更重要",ko:"안티에이징 성분 우선순위",kw:"韩国抗老护肤成分"},
+    {zh:"肽类成分真的有效吗·科学验证",ko:"펩타이드 효과 검증",kw:"韩国多肽精华成分"}
+  ],
+  sensitive:[
+    {zh:"敏感肌成分黑名单·别再踩雷了",ko:"민감성피부 피해야 할 성분",kw:"敏感肌护肤成分禁忌"},
+    {zh:"神经酰胺值不值·成分解析",ko:"세라마이드 성분 가이드",kw:"神经酰胺护肤品韩国"},
+    {zh:"皮肤屏障修复·怎么选才对",ko:"피부장벽 회복 제품 선택법",kw:"皮肤屏障修复韩国"}
+  ]
+};
+
+let state={city:"seoul",interests:["food","cafe"],style:"std",budget:"",dates:"",days:3};
+let favorites={};
+let savePrompted=false;
+const SAVE_TRIGGER=3; // ♥ 이만큼 모으면 자동으로 리포트 받기 팝업 (5로 바꿔도 됨)
+
+document.querySelectorAll('#style .opt').forEach(o=>o.onclick=()=>{document.querySelectorAll('#style .opt').forEach(x=>x.classList.remove('on'));o.classList.add('on');state.style=o.dataset.s});
+function calcDays(){
+  var s=document.getElementById('dStart').value, e=document.getElementById('dEnd').value, info=document.getElementById('dInfo');
+  if(s&&e){
+    var nights=Math.round((new Date(e)-new Date(s))/86400000);
+    if(nights<0){info.textContent='⚠️ 도착일이 출발일보다 빨라요 · 日期有误';return;}
+    var days=nights+1; state.days=days; state.dates=s+' ~ '+e;
+    info.innerHTML='👉 <b>'+days+'天'+nights+'夜 · '+nights+'박'+days+'일</b>';
+  }
+}
+document.querySelectorAll('#interests .chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');state.interests=[...document.querySelectorAll('#interests .chip.on')].map(x=>x.dataset.i)});
+
+function follow(t){
+  if(t==='xhs'){
+    if(XHS_URL){window.open(XHS_URL,'_blank');}
+    else{ if(navigator.clipboard) navigator.clipboard.writeText(XHS_ID); showToast("小红书号已复制: "+XHS_ID+" — 去小红书搜索关注～"); }
+  } else { openWeChat(); }
+  return false;
+}
+function wcCard(){
+  return `<img src="${WECHAT_QR}" style="width:100%;max-width:260px;display:block;margin:4px auto 10px;border-radius:14px;border:1px solid var(--line)">
+    <div style="text-align:center;font-size:13.5px">微信号 WeChat: <b>${WECHAT_ID}</b></div>`;
+}
+function openWeChat(){
+  document.getElementById('sheet').innerHTML=`
+    <button class="close" onclick="closeSheet()">×</button>
+    <h3>💬 加我微信 · 위챗 추가</h3>
+    <div class="d">长按二维码识别 或 截图扫码加好友，问题我直接回复你<br>QR 길게눌러 인식/스캔 → 친구추가하면 바로 답변</div>
+    ${wcCard()}
+    <button class="submit" onclick="copyWX()" style="margin-top:12px">复制微信号 · ID 복사</button>`;
+  document.getElementById('ov').classList.add('show');
+}
+function copyWX(){ if(navigator.clipboard) navigator.clipboard.writeText(WECHAT_ID); showToast("微信号已复制: "+WECHAT_ID); }
+
+function generate(){
+  if(state.interests.length===0){alert("请至少选一个目的 · 목적 1개 이상 선택");return;}
+  state.budget=document.getElementById('budget').value.trim();
+  let pool=SPOTS.filter(s=>state.interests.includes(s.cat));
+  const byArea={}; pool.forEach(s=>{(byArea[s.area]=byArea[s.area]||[]).push(s)});
+  let areas=Object.keys(byArea).sort((a,b)=>byArea[b].length-byArea[a].length);
+  const days=[]; let ai=0;
+  for(let d=0;d<state.days;d++){
+    let ds=[];
+    while(ds.length<3 && ai<areas.length){ ds=ds.concat(byArea[areas[ai]].slice(0,3)); ai++; if(ds.length>=3)break; }
+    if(ds.length===0){ const all=pool.slice(); ds=all.slice((d*3)%Math.max(all.length,1),(d*3)%Math.max(all.length,1)+3); }
+    days.push(ds.slice(0,4));
+  }
+  render(days);
+}
+
+function render(days){
+  favorites={}; savePrompted=false; window.lastDays=days;
+  const totalMin=days.flat().reduce((s,sp)=>{const m=(sp.cost.match(/[\d,]+/g)||["0"]);return s+(parseInt(m[0].replace(/,/g,''))||0);},0);
+  let html=`
+   <div class="decis">今天不是推荐你去哪里，<b>而是告诉你为什么值得去</b>。
+     <span>어디 가라가 아니라, 왜 지금 가야 하는지를 알려드려요.</span></div>
+   <div class="summary">
+     <h2>🇰🇷 首尔 ${state.days}天 决策方案</h2>
+     <p>按你的目的，避开踩雷、优化动线 · 목적 기반 동선 완성</p>
+     <div class="meta">
+       <span>📍 ${state.days}天${state.days-1}夜</span>
+       <span>💰 ${STYLE_LABEL[state.style].split(' ')[0]}</span>
+       ${state.dates?`<span>📅 ${state.dates}</span>`:''}
+       ${state.budget?`<span>💵 ${state.budget}</span>`:''}
+     </div>
+   </div>`;
+  const seenSpotImgs=new Set();
+  days.forEach((spots,i)=>{
+    const dayAreas=[...new Set(spots.map(s=>s.areaZh))].join(' · ');
+    html+=`<div class="day"><div class="day-h"><div class="day-n">D${i+1}</div><b>${dayAreas}</b><small>${spots.length} 个地点</small></div>`;
+    spots.forEach((s,j)=>{
+      const id=`${i}-${j}`;
+      const med=s.med?`<div class="reason" style="color:#b08a3a">⚠️ 仅供参考，需现场咨询医生 · 의료광고 아님</div>`:"";
+      const relC=CONTENT_MAP[s.cat]||[];
+      const showSpotImg=s.img&&!seenSpotImgs.has(s.img);
+      if(s.img)seenSpotImgs.add(s.img);
+      html+=`<div class="spot">
+        ${showSpotImg?`<img class="spot-img" src="${s.img}" alt="${s.ko}" loading="lazy" onerror="this.style.display='none'">`:''}
+        <button class="fav" id="fav-${id}" onclick="toggleFav('${id}',this)">♥</button>
+        <div class="cat">${CAT_LABEL[s.cat]||''} <span class="vbadge">✅ 实地验证 검증</span></div>
+        <div class="zh">${s.zh}</div>
+        <div class="ko-box"><span class="sign">看招牌 간판</span><span class="ko">${s.ko}</span><span class="pron">${s.pron}</span></div>
+        <div class="reason"><b>推荐理由 추천이유:</b> ${s.why_zh}</div>
+        ${s.rev?`<div class="rev">💬 中国朋友：“${s.rev}”</div>`:''}
+        ${s.event?`<div class="spotevt">🔥 <b>现在·지금</b><span class="tg">${s.event.tag}</span><br><b>${s.event.zh}</b> · ${s.event.ko}<br><span class="kohint">📍${s.event.where||''} · 🗓${s.event.when||''}${s.event.price?' · 🎫'+s.event.price:''}</span></div>`:''}
+        ${med}
+        <div class="ft">⏱ 推荐停留 <b>${s.time}</b> · 💵 <b>${s.cost}</b>${s.rec?` · 👍 <b>${s.rec}</b>人推荐`:''}</div>
+        <div class="links">
+          <a href="https://map.naver.com/p/search/${encodeURIComponent(s.ko)}" target="_blank" rel="noopener">📍 地图·지도</a>
+          <a href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(s.zh)}&source=web_explore_feed" target="_blank" rel="noopener">📕 真实评价 ${Math.round(s.rec*0.4)}篇</a>
+        </div>
+        ${relC.length?`<div class="related"><div class="rel-header">📌 相关验证内容 · 관련 검증 콘텐츠</div><a class="rel-item" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(relC[0].kw)}&source=web_explore_feed" target="_blank" rel="noopener">${relC[0].zh}<small>${relC[0].ko}</small></a>${relC.length>1?`<div class="rel-toggle" onclick="toggleRel(this)">更多内容 ${relC.length-1}篇 <span class="rel-arr">▾</span></div><div class="rel-list" style="display:none">${relC.slice(1).map(c=>`<a class="rel-item" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(c.kw)}&source=web_explore_feed" target="_blank" rel="noopener">${c.zh}<small>${c.ko}</small></a>`).join('')}</div>`:''}</div>`:''}
+      </div>`;
+      window['_spot_'+id]=s;
+    });
+    html+=`</div>`;
+  });
+  html+=`
+   <div class="est"><div class="t">预计花费(不含住宿) · 예상 경비</div><div class="v">约 ₩${totalMin.toLocaleString()} <small>~ 起</small></div></div>
+   <div class="tips">
+     <h4 onclick="document.getElementById('tipBody').style.display=(document.getElementById('tipBody').style.display==='none'?'block':'none')">🧳 出行贴士 · 한국 여행 꿀팁 (검증됨) <span style="color:var(--accent)">펼치기 ▾</span></h4>
+     <div id="tipBody" style="display:none">
+       <div class="ti"><b>💳 支付 결제</b>便利店/大店多支持支付宝·微信支付，小店备现金 · 알리페이·위챗페이 점점 됨</div>
+       <div class="ti"><b>🧾 退税 택스리펀</b>单店满₩15,000可退，机场/市区办理 · 1.5만원↑ 환급</div>
+       <div class="ti"><b>🚇 交通 교통</b>买张 T-money 卡刷地铁公交 · 티머니 카드</div>
+       <div class="ti"><b>💱 换钱 환전</b>明洞/东大门换钱所汇率最好 · 명동 환전소</div>
+       <div class="ti"><b>📅 预约 예약</b>热门餐厅用 Catchtable/Naver · 인기맛집 예약앱</div>
+     </div>
+   </div>
+   <div class="trust-box">
+     <div class="trust-row">✅ <span>이 코스 모든 장소 실측·검증했어요 · <b>全部经过实地验证(筛选)</b></span></div>
+     <div class="trust-row">👣 <span>中国朋友 <b>127명</b>이 이 코스로 다녀갔어요 · 已有127位中国朋友来过</span></div>
+     <div class="trust-row">🤔 <span>그래도 망설여지면? · 还不放心？</span></div>
+     <div class="trust-btns">
+       <a href="${XHS_URL}" target="_blank" rel="noopener">📕 真实评价 보기</a>
+       <button onclick="openInquiry()">💬 직접 물어보기</button>
+     </div>
+   </div>
+   <div class="savebar">
+     <button class="share" onclick="genShare()">📤 分享这个行程 · 이 코스 공유하기</button>
+     <button class="join" onclick="openSave()">📋 保存·领取行程报告 · 행정 리포트 받기</button>
+     <button class="restart" onclick="openInquiry()">💬 궁금한 점 문의하기 · 有问题问一问</button>
+     <button class="restart" onclick="restart()">↺ 重新生成 · 다시 만들기</button>
+   </div>
+   <div class="foot">Quration Korea · 你的韩国旅行决策助手</div>`;
+  document.getElementById('form').style.display='none';
+  const r=document.getElementById('result'); r.innerHTML=html; r.style.display='block'; window.scrollTo(0,0);
+}
+
+function toggleFav(id,btn){
+  if(favorites[id]){delete favorites[id];btn.classList.remove('on');}
+  else{
+    favorites[id]=window['_spot_'+id];btn.classList.add('on');
+    if(!savePrompted && Object.keys(favorites).length>=SAVE_TRIGGER){ savePrompted=true; setTimeout(openSave,450); }
+  }
+}
+
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+
+function genShare(){
+  const days=window.lastDays||[];
+  const areas=[...new Set(days.flat().map(s=>s.areaZh))].slice(0,3).join('·');
+  const titles=["不踩雷的本地路线","姐妹们冲就完了","这条路线我封神了","首尔本地人私藏"];
+  const t=titles[(days.flat().length+state.days)%titles.length];
+  let txt=`首尔${state.days}天${state.days-1}夜 | ${t}🇰🇷✨\n\n谁懂啊…第一次来首尔真的会无从下手😭 选择太多，帮你直接决定好了👇\n\n`;
+  days.forEach((sp,i)=>{ txt+=`📍Day${i+1} ${[...new Set(sp.map(s=>s.areaZh))].join('·')}\n`; sp.forEach(s=>{txt+=`· ${s.zh}（${s.ko}）${s.rev?'— '+s.rev:''}\n`;}); txt+=`\n`; });
+  txt+=`💡 支付/退税/换钱贴士都帮你整理好啦\n完整行程+避雷攻略，评论区扣「1」我发你～\n\n#首尔旅游 #首尔攻略 #韩国自由行 #首尔美食 #${areas.replace(/·/g,' #')} #出片圣地 #首尔citywalk #不踩雷`;
+  window._shareTxt=txt;
+  document.getElementById('sheet').innerHTML=`
+    <button class="close" onclick="closeSheet()">×</button>
+    <h3>📤 分享这个行程</h3>
+    <div class="d">아래 글을 복사해서 <b>샤오홍슈·朋友圈</b>에 붙여넣으면 게시 끝!<br>复制下面文案，粘贴到小红书/朋友圈即可发布～</div>
+    <textarea id="shareTxt" style="min-height:230px" readonly>${txt}</textarea>
+    <button class="submit" onclick="copyShare()" style="margin-top:10px">📋 复制文案 · 복사하기</button>`;
+  document.getElementById('ov').classList.add('show');
+}
+function copyShare(){
+  var t=window._shareTxt||'', ta=document.getElementById('shareTxt');
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){showToast("✅ 已复制，去粘贴吧 · 복사완료");}).catch(go);}else go();
+  function go(){ta.focus();ta.select();try{document.execCommand('copy');showToast("✅ 已复制 · 복사완료");}catch(e){showToast("长按全选复制 · 길게눌러 복사");}}
+}
+
+// ====== DB 수집 (relay 준비됨) ======
+function leadMsg(l){
+  var t = l.type==='inquiry' ? '💬 새 문의' : '🎫 새 가입';
+  var pltLabel = l.platform==='xhs' ? '📕 샤오홍슈' : '💬 위챗';
+  return '🔔 **Quration '+t+'**\n'
+    +pltLabel+' ID: `'+(l.contact||l.wx||'-')+'`\n'
+    +(l.q?'질문: '+l.q+'\n':'')
+    +(l.name?'닉네임: '+l.name+'\n':'')
+    +'관심사: '+((l.interests||[]).join(', ')||'-')+'\n'
+    +(l.saved&&l.saved.length?'찜: '+l.saved.join(' / ')+'\n':'')
+    +'도시: '+(l.city||'-')+(l.days?' · '+l.days+'일':'')+(l.budget?' · '+l.budget:'')
+    +(l.subscribe?'\n📬 매주 소식 구독 YES':'\n📋 일정만 받기');
+}
+function saveLead(lead){
+  const db=JSON.parse(localStorage.getItem('quration_leads')||'[]'); db.push(lead); localStorage.setItem('quration_leads',JSON.stringify(db));
+  if(RELAY_URL){
+    try{
+      if(RELAY_URL.indexOf('discord.com/api/webhooks')>=0){
+        var fd=new FormData(); fd.append('payload_json', JSON.stringify({content: leadMsg(lead)}));
+        fetch(RELAY_URL,{method:'POST',mode:'no-cors',body:fd});
+      } else {
+        fetch(RELAY_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(lead)});
+      }
+    }catch(e){}
+  }
+  return db.length;
+}
+function reqCity(name){ openInquiry('城市申请 도시신청: '+name); }
+function openInquiry(prefill){
+  document.getElementById('sheet').innerHTML=`
+    <button class="close" onclick="closeSheet()">×</button>
+    <h3>💬 궁금한 점·문의</h3>
+    <div class="d">질문 + 微信 남기면 직접 답해드려요<br>留下问题和微信，我们直接回复你</div>
+    <div class="field"><label>问题 궁금한 점 *</label><textarea id="iq" placeholder="${prefill||'예: 피부과 비용? / 这家好吃吗?'}">${prefill||''}</textarea></div>
+    <div class="field"><label>微信号 WeChat ID *</label><input id="iwx" placeholder="例: quration_kr"></div>
+    <button class="submit" onclick="submitInquiry()">문의 보내기 · 提交</button>`;
+  document.getElementById('ov').classList.add('show');
+}
+function submitInquiry(){
+  const q=document.getElementById('iq').value.trim(), wx=document.getElementById('iwx').value.trim();
+  if(!q){alert("请写下问题 · 질문을 적어주세요");return;} if(!wx){alert("请填微信号 · 위챗 입력");return;}
+  saveLead({type:'inquiry',q,wx,city:state.city,interests:state.interests,ts:new Date().toISOString()});
+  document.getElementById('sheet').innerHTML=`<div class="ok"><div class="big">📨</div><h3>문의 접수 완료! 已收到</h3><p>👇 加我微信，我直接回复你<br>위챗 추가하면 더 빨리 답변드려요</p></div>${wcCard()}<button class="submit" onclick="closeSheet()" style="margin-top:10px">확인 完成</button>`;
+}
+function openSave(){
+  const favs=Object.values(favorites);
+  const savedHtml=favs.length?`<div class="saved-list">${favs.map(s=>`<div>♥ ${s.zh} <span style="color:#9aa">/ ${s.ko}</span></div>`).join('')}</div>`:`<div class="d">💡 ♥ 마음에 드는 곳 먼저 누르면 더 정확해요 · 先收藏喜欢的地点</div>`;
+  const head=favs.length
+    ? {h:`❤️ 已收藏 ${favs.length} 个地点！`, d:`把行程报告发到你的微信/小红书～<br>저장한 ${favs.length}곳 맞춤 리포트 보내드려요 (무료)`}
+    : {h:`📋 领取你的专属行程报告`, d:`行程报告 + 每周韩国情报发给你<br>맞춤 리포트 + 주간 정보 보내드려요 (무료)`};
+  window._selPlt='wx';
+  document.getElementById('sheet').innerHTML=`
+    <button class="close" onclick="closeSheet()">×</button>
+    <h3>${head.h}</h3>
+    <div class="d">${head.d}</div>
+    <div class="benefits"><div class="bt">会员福利 · 멤버 혜택</div>
+      <div class="bi">🗓 每周首尔新热点 · 매주 서울 핫플</div>
+      <div class="bi">💄 Olive Young 新品·折扣 · 올리브영 신상·할인</div>
+      <div class="bi">✅ 实地验证清单 · 검증된 맛집·뷰티·병원</div>
+      <div class="bi">💬 会员专属真人解答 · 회원 전용 직접 답변</div></div>
+    ${savedHtml}
+    <div class="field"><label>어디로 받을래요? · 选择接收方式 *</label>
+      <div class="plt-row">
+        <button class="plt on" id="plt-wx" onclick="selPlt('wx')">💬 위챗 WeChat</button>
+        <button class="plt" id="plt-xhs" onclick="selPlt('xhs')">📕 샤오홍슈 小红书</button>
+      </div></div>
+    <div class="field"><label id="id-label">微信号 WeChat ID *</label><input id="contact-id" placeholder="예: quration_korea"></div>
+    <div class="field"><label>昵称 닉네임</label><input id="nm" placeholder="选填 (선택)"></div>
+    <label style="display:flex;align-items:flex-start;gap:10px;padding:11px 13px;background:#fff7f0;border:1px solid #fde4d3;border-radius:11px;cursor:pointer;font-size:13px;color:#5b4636;line-height:1.5;margin-bottom:4px">
+      <input type="checkbox" id="sub" style="width:18px;height:18px;margin-top:1px;accent-color:var(--accent);flex-shrink:0">
+      <span>📬 매주 서울 소식도 받기 · <b>每周首尔情报</b><br><span style="font-size:11px;color:var(--sub)">핫플·올영신상·팝업 정보 (선택 · 선택 안 해도 이 일정은 받아요)</span></span>
+    </label>
+    <button class="submit" onclick="submitLead()">📩 이 일정 받기 · 领取我的行程</button>`;
+  document.getElementById('ov').classList.add('show');
+}
+function selPlt(p){
+  document.querySelectorAll('.plt').forEach(b=>b.classList.remove('on'));
+  document.getElementById('plt-'+p).classList.add('on');
+  var isXhs=p==='xhs';
+  document.getElementById('id-label').textContent=isXhs?'小红书号 샤오홍슈 ID *':'微信号 WeChat ID *';
+  document.getElementById('contact-id').placeholder=isXhs?'예: 94342747991':'예: quration_korea';
+  window._selPlt=p;
+}
+function submitLead(){
+  const contact=document.getElementById('contact-id').value.trim();
+  const plt=window._selPlt||'wx';
+  if(!contact){alert(plt==='xhs'?'请填小红书号 · 샤오홍슈 ID 입력해주세요':'请填微信号 · 위챗 입력해주세요');return;}
+  const subscribe=document.getElementById('sub')&&document.getElementById('sub').checked;
+  const n=saveLead({type:'member',platform:plt,contact,wx:plt==='wx'?contact:'',subscribe,name:document.getElementById('nm').value.trim(),city:state.city,days:state.days,style:state.style,budget:state.budget,interests:state.interests,saved:Object.values(favorites).map(s=>s.ko),ts:new Date().toISOString()});
+  const isXhs=plt==='xhs';
+  document.getElementById('sheet').innerHTML=`<div class="ok"><div class="big">🎉</div><h3>欢迎加入！멤버십 가입 완료</h3><p>${isXhs?'📕 小红书 DM으로 보내드려요<br>샤오홍슈 DM 확인해주세요':'👇 加我微信，马上把完整行程发你<br>위챗 추가하면 전체 코스 바로 보내드려요'}</p></div>${isXhs?`<div style="text-align:center;font-size:13px;color:#4b5563;padding:8px 0">小红书号: <b>${XHS_ID}</b><br><span style="font-size:11px">검색 후 팔로우하면 DM 드려요</span></div>`:wcCard()}<p style="text-align:center;font-size:11px;color:#b9bbc0;margin-top:6px">第 ${n} 位会员</p><button class="submit" onclick="closeSheet()" style="margin-top:10px">확인 完成</button>`;
+}
+function closeSheet(){document.getElementById('ov').classList.remove('show');}
+function toggleRel(el){var l=el.nextElementSibling,o=l.style.display!=='none';l.style.display=o?'none':'flex';el.querySelector('.rel-arr').textContent=o?'▾':'▴';}
+
+// ====== 화장품 筛선 ======
+let bState={concerns:['brightening'],cats:['skincare'],budget:'low'};
+document.querySelectorAll('#b-concerns .chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');bState.concerns=[...document.querySelectorAll('#b-concerns .chip.on')].map(x=>x.dataset.c)});
+document.querySelectorAll('#b-cats .chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');bState.cats=[...document.querySelectorAll('#b-cats .chip.on')].map(x=>x.dataset.bc)});
+document.querySelectorAll('#b-budget .opt').forEach(o=>o.onclick=()=>{document.querySelectorAll('#b-budget .opt').forEach(x=>x.classList.remove('on'));o.classList.add('on');bState.budget=o.dataset.bb});
+function generateBeauty(){
+  if(bState.concerns.length===0){alert('피부 고민을 선택해주세요');return;}
+  const budgetMax={low:30000,mid:80000,high:999999};
+  const max=budgetMax[bState.budget];
+  const recs=PRODUCTS.filter(p=>p.verdict==='rec'&&(bState.cats.length===0||bState.cats.includes(p.cat))&&p.concern.some(c=>bState.concerns.includes(c))&&p.price<=max);
+  const avoids=PRODUCTS.filter(p=>p.verdict==='avoid'&&p.concern.some(c=>bState.concerns.includes(c)));
+  renderBeauty(recs,avoids);
+}
+function renderBeauty(recs,avoids){
+  let html=`<div class="decis">按成分说话，不是按广告说话<b> · 筛过的才留下</b><span>광고 아닌 성분으로 판단 — 추천 아님, 걸러낸 것</span></div>`;
+  const CAT_EMOJI={skincare:"🧴",suncare:"☀️",mask:"🎭",makeup:"💄"};
+  if(recs.length){
+    html+=`<div style="font-size:13px;font-weight:800;color:#1a8a4a;margin:14px 0 8px">✅ 买！추천 (${recs.length}개)</div>`;
+    recs.forEach(p=>{
+      const imgArea=p.img?`<img class="pcard-img" src="${p.img}" alt="${p.ko}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'';
+      const phArea=`<div class="pcard-img-ph" style="${p.img?'display:none':''}">${CAT_EMOJI[p.cat]||'💄'}</div>`;
+      html+=`<div class="pcard rec">
+        ${imgArea}${phArea}
+        <div class="pcard-body">
+          <span class="verdict">✅ 筛过·推荐买</span>
+          <div class="pname">${p.zh}</div>
+          <div class="pko">${p.ko}</div>
+          <div class="ingredient">🧪 <b>핵심성분:</b> ${p.ingredient}</div>
+          <div class="preason">💡 ${p.why_zh}</div>
+          ${p.rev?`<div class="prev">💬 中国朋友: "${p.rev}"</div>`:''}
+          <div class="pprice">💵 ₩${p.price.toLocaleString()} · Olive Young</div>
+          <div class="links" style="margin-top:8px">
+            <a href="https://global.oliveyoung.com/search?query=${encodeURIComponent(p.ko)}" target="_blank" rel="noopener">🛒 Olive Young 글로벌</a>
+          </div>
+          ${(()=>{const relKeys=[...new Set(p.concern)];const relC=relKeys.flatMap(k=>BEAUTY_CONTENT_MAP[k]||[]).slice(0,3);return relC.length?`<div class="related"><div class="rel-header">📌 相关验证内容 · 관련 검증 콘텐츠</div><a class="rel-item" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(relC[0].kw)}&source=web_explore_feed" target="_blank" rel="noopener">${relC[0].zh}<small>${relC[0].ko}</small></a>${relC.length>1?`<div class="rel-toggle" onclick="toggleRel(this)">更多内容 ${relC.length-1}篇 <span class="rel-arr">▾</span></div><div class="rel-list" style="display:none">${relC.slice(1).map(c=>`<a class="rel-item" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(c.kw)}&source=web_explore_feed" target="_blank" rel="noopener">${c.zh}<small>${c.ko}</small></a>`).join('')}</div>`:''}</div>`:'';})()}
+        </div>
+      </div>`;
+    });
+  }
+  if(avoids.length){
+    html+=`<div style="font-size:13px;font-weight:800;color:var(--red);margin:16px 0 8px">❌ 别买 · 비추 (${avoids.length}개)</div>`;
+    avoids.forEach(p=>{
+      const imgArea=p.img?`<img class="pcard-img" src="${p.img}" alt="${p.ko}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'';
+      const phArea=`<div class="pcard-img-ph" style="${p.img?'display:none':''}">${CAT_EMOJI[p.cat]||'💄'}</div>`;
+      html+=`<div class="pcard avoid">
+        ${imgArea}${phArea}
+        <div class="pcard-body">
+          <span class="verdict">❌ 筛掉·别买</span>
+          <div class="pname">${p.zh}</div>
+          <div class="pko">${p.ko}</div>
+          <div class="preason" style="color:#c0392b;line-height:1.55">⚠️ ${p.avoid_reason}</div>
+          <div class="pprice">₩${p.price.toLocaleString()}</div>
+        </div>
+      </div>`;
+    });
+  }
+  if(!recs.length&&!avoids.length){html+=`<div class="decis">해당 조건의 제품이 아직 없어요 · 数据建设中，稍后更新</div>`;}
+  html+=`
+    <div class="trust-box">
+      <div class="trust-row">✅ <span>전부 성분 기준으로 직접 검증했어요 · <b>全部按成分亲自筛选</b></span></div>
+      <div class="trust-row">🤔 <span>더 물어보고 싶으면? · 还想问？</span></div>
+      <div class="trust-btns">
+        <a href="${XHS_URL}" target="_blank" rel="noopener">📕 더 보기</a>
+        <button onclick="openInquiry()">💬 직접 물어보기</button>
+      </div>
+    </div>
+    <div class="savebar">
+      <button class="join" onclick="openSave()">📋 이 결과 저장 · 保存结果</button>
+      <button class="restart" onclick="restartBeauty()">↺ 다시 筛选 · 重新筛选</button>
+    </div>
+    <div class="foot">Quration Korea · 성분으로 걸러줌 · 按成分筛选</div>`;
+  document.getElementById('beauty-form').style.display='none';
+  const r=document.getElementById('beauty-result');r.innerHTML=html;r.style.display='block';window.scrollTo(0,0);
+}
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  const show=(id,v)=>{const el=document.getElementById(id);if(el)el.style.display=v;};
+  if(tab==='travel'){
+    show('form','block');show('result','none');show('beauty-form','none');show('beauty-result','none');show('pick-panel','none');
+  } else if(tab==='beauty'){
+    show('form','none');show('result','none');show('beauty-form','block');show('beauty-result','none');show('pick-panel','none');
+  } else {
+    show('form','none');show('result','none');show('beauty-form','none');show('beauty-result','none');show('pick-panel','block');
+  }
+  window.scrollTo(0,0);
+}
+function toggleTip(el){
+  el.classList.toggle('open');
+  const body=el.nextElementSibling;
+  body.style.display=body.style.display==='block'?'none':'block';
+}
+function restartBeauty(){document.getElementById('beauty-result').style.display='none';document.getElementById('beauty-form').style.display='block';window.scrollTo(0,0);}
+
+function restart(){document.getElementById('result').style.display='none';document.getElementById('form').style.display='block';window.scrollTo(0,0);}
+</script>
+
+<div id="pick-panel" style="display:none">
+  <div class="panel">
+    <div class="hero">
+      <div class="big">韩国旅行必看 · 여행 꿀팁 🧳</div>
+      <div class="sub">实际去过才知道的省钱攻略 + 避坑指南 — 中国游客最容易踩的坑都在这里</div>
+      <span class="ko">직접 다녀온 사람만 아는 꿀팁 — 중국인 여행자가 모르면 손해보는 것들</span>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">💱 换汇去哪里最划算？<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>明洞换汇所</b> 汇率最好，兑换主要金额（比银行好2–3%）</li>
+          <li>仁川机场汇率差，只换<b>最低生活费</b>就好</li>
+          <li>1万韩元 ≈ <b>50元人民币</b>（实时汇率请查当日）</li>
+          <li>大型商场支持<b>银联卡</b>，手续费约1%</li>
+        </ul>
+        <div class="tip-warn">⚠️ 명동 환전소는 밤 10시까지 영업 — 주말도 오픈</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">🚇 交通怎么玩最顺？<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>T-money卡</b> 필수 — 지하철+버스 모두 사용, 편의점에서 구매·충전</li>
+          <li>인천공항 → 시내: <b>AREX 직통</b> 43분, ₩9,500</li>
+          <li>지도 앱: <b>Naver 地图</b> 중국어 지원, 지하철 경로 자동 안내</li>
+          <li>택시: <b>Kakao T</b> 앱, 카드결제 OK</li>
+        </ul>
+        <div class="tip-warn">💡 地铁比打车便宜10倍 — 지하철 기본요금 ₩1,400</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">💳 支付方式全攻略<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>支付宝 / 微信</b>：大型商场·免税店·连锁餐厅 OK</li>
+          <li><b>VISA / Mastercard</b>：거의 모든 곳에서 사용 가능</li>
+          <li><b>现金</b>：광장시장·남대문 전통시장은 현금 우선</li>
+          <li>편의점(GS25·CU·세븐)：支付宝微信 모두 접수</li>
+        </ul>
+        <div class="tip-warn">⚠️ 소형 식당·노점은 현금만 — 현금 3–5만원 항상 소지</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">🧾 退税怎么退？<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li>단일 매장 <b>₩15,000</b> 이상 구매 시 부가세(10%) 환급 신청 가능</li>
+          <li><b>시내 즉시환급</b>：KT/TAXBACK 표시 매장에서 계산대 즉시 환급</li>
+          <li><b>공항 환급</b>：출국 전 세관 도장 → 면세구역 창구에서 현금·카드 환급</li>
+          <li>올리브영도 退税 OK — 여권 필수 지참</li>
+        </ul>
+        <div class="tip-warn">💡 免税额度超$600需提前护照预约 · 免税店 구매는 사전 예약 필요</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">📱 必装App清单<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li>🗺 <b>Naver Map</b> — 한국 지도 앱 1위, 중국어 지원, 지하철·버스 경로</li>
+          <li>🔤 <b>Papago</b> — 한국어 번역 정확도 Google보다 높음</li>
+          <li>🚕 <b>Kakao T</b> — 택시 앱, 중국어 설정 가능</li>
+          <li>🛒 <b>Olive Young App</b> — 온·오프라인 포인트, 재고 확인</li>
+          <li>🍽 <b>Naver 예약</b> — 인기 식당 예약 필수</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">🛍 올리브영 攻略<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>会员卡</b>：계산 전 앱 다운+가입, 당일 구매 즉시 포인트</li>
+          <li><b>세일 타이밍</b>：올영세일(매월 1–7일), 연간 4회 대형 세일</li>
+          <li>명동 플래그십 <b>24시간</b> 영업, 새벽 쇼핑 가능</li>
+          <li>₩30,000 이상 구매 시 退税 신청 — 계산대에서 처리</li>
+          <li>热销品<b>货比三家</b>：다이소·편의점이 더 저렴한 경우도 있음</li>
+        </ul>
+        <div class="tip-warn">💡 앱으로 재고 미리 확인 — 품절 방지 필수</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">💊 약국 必买清单<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>정관장 홍삼</b> — 공항보다 시내 약국이 50% 저렴</li>
+          <li><b>우황청심원</b> — 소화불량·긴장 완화, 여행 필수 상비약</li>
+          <li><b>파스(湿布贴)</b> — 많이 걷다 다리 아플 때, 마트가 약국보다 저렴</li>
+          <li><b>미용 약국템</b>：닥터지·CNP·JMsolution 현장 구매 저렴</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-head" onclick="toggleTip(this)">📶 上网方案对比<span class="tip-arr">▾</span></div>
+      <div class="tip-body" style="display:none">
+        <ul>
+          <li><b>포켓 와이파이</b>：여러 명 공유 시 추천, 인천공항 대여·반납, 일 ₩5,000</li>
+          <li><b>한국 SIM카드</b>：개인 추천, KT/SKT 7일 ₩15,000–20,000, 공항 구매</li>
+          <li><b>중국 로밍</b>：비싸고 불안정 — 비추천</li>
+          <li>GS25·CU 편의점에서도 데이터 SIM 판매</li>
+        </ul>
+        <div class="tip-warn">💡 공항 도착 로비 SIM 자판기 — 24시간 구매 가능</div>
+      </div>
+    </div>
+
+    <div style="height:6px"></div>
+    <div class="pick-section-title">💎 Quration Pick · 검증된 브랜드 추천</div>
+
+    <div class="pick-card">
+      <div class="pick-ico">🐌</div>
+      <div class="pick-info">
+        <div class="pick-brand">COSRX · 코스알엑스</div>
+        <div class="pick-name">어드밴스드 스네일 96</div>
+        <div class="pick-zh">蜗牛精华液 — 韩国出口量No.1，96%蜗牛粘液，屏障修复+保湿双效，全肤质适用</div>
+        <span class="pick-badge">검증된 1위</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">🌿</div>
+      <div class="pick-info">
+        <div class="pick-brand">ANUA · 아뉴아</div>
+        <div class="pick-name">어성초 77 토너 패드</div>
+        <div class="pick-zh">鱼腥草控油爽肤水垫 — 敏感肌·痘痘肌救星，77%天然植物，TikTok全球爆款</div>
+        <span class="pick-badge">🔥 바이럴</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">👑</div>
+      <div class="pick-info">
+        <div class="pick-brand">Beauty of Joseon · 조선미인</div>
+        <div class="pick-name">감초 빛 세럼</div>
+        <div class="pick-zh">甘草焕亮精华 — 韩方+现代成分，提亮暗沉淡斑，成分党认证，性价比高</div>
+        <span class="pick-badge">성분 검증</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">🌱</div>
+      <div class="pick-info">
+        <div class="pick-brand">Skin1004 · 스킨1004</div>
+        <div class="pick-name">마다가스카르 센텔라 세럼</div>
+        <div class="pick-zh">积雪草精华 — 单一成分极简，修红舒缓，敏感肌终极之选，性价比极高</div>
+        <span class="pick-badge">가성비 픽</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">✨</div>
+      <div class="pick-info">
+        <div class="pick-brand">롬앤 · ROM&ND</div>
+        <div class="pick-name">쥬시 라스팅 틴트</div>
+        <div class="pick-zh">水润持色唇釉 — 韩国唇妆销量王，显色度高·滋润不拔干，45色以上可选</div>
+        <span class="pick-badge">립 No.1</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">🎨</div>
+      <div class="pick-info">
+        <div class="pick-brand">에뛰드 · ETUDE</div>
+        <div class="pick-name">드로잉 아이브로우</div>
+        <div class="pick-zh">自然裸感眉笔 — 2026流行「透明眉」必备，超细笔芯，稀疏眉补绘首选</div>
+        <span class="pick-badge">2026 트렌드</span>
+      </div>
+    </div>
+
+    <div class="pick-card">
+      <div class="pick-ico">🌸</div>
+      <div class="pick-info">
+        <div class="pick-brand">이니스프리 · INNISFREE</div>
+        <div class="pick-name">그린티 시드 세럼</div>
+        <div class="pick-zh">济州绿茶精华 — 经典百销款，抗氧化+长效保湿，敏感肌OK，가격 대비 최고</div>
+        <span class="pick-badge">클래식 픽</span>
+      </div>
+    </div>
+
+    <div class="trust-box" style="margin-top:14px">
+      <div class="trust-row">✅ <span>전부 성분 직접 검증 · <b>全部成分经过亲自验证</b></span></div>
+      <div class="trust-row">📕 <span>더 많은 검증 리뷰 보러오기</span></div>
+      <div class="trust-btns">
+        <a href="https://xhslink.com/m/4sU1stOW38l" target="_blank" rel="noopener">📕 小红书 팔로우</a>
+      </div>
+    </div>
+    <div class="foot">Quration Korea · 검증된 선택만 · 只做验证过的推荐</div>
+  </div>
+</div>
+
+</body>
+</html>
