@@ -665,7 +665,7 @@
       <h2 class="round-font">무료 진단 신청</h2>
       <p class="lead">아래만 남겨주시면 담당자가 빠르게 연락드립니다.</p>
     </div>
-    <form class="form reveal" action="https://formsubmit.co/roundhdcd@gmail.com" method="POST">
+    <form id="applyForm" class="form reveal" action="https://formsubmit.co/ajax/roundhdcd@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="🥕 당근부스트 무료 진단 신청">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
@@ -681,9 +681,15 @@
       <div class="field"><label>희망 기간</label>
         <select name="희망기간"><option>1개월</option><option>3개월</option><option>6개월 이상</option><option>장기 운영</option><option>미정 (상담 후 결정)</option></select>
       </div>
-      <button class="btn btn-primary round-font" type="submit">무료 진단 신청하기 🥕</button>
+      <button id="applyBtn" class="btn btn-primary round-font" type="submit">무료 진단 신청하기 🥕</button>
       <p class="form-note">제출하면 담당자가 빠르게 연락드립니다.</p>
     </form>
+    <div id="applyDone" style="display:none;text-align:center;padding:40px 24px;background:#fff;border-radius:28px;max-width:560px;margin:46px auto 0;">
+      <div style="font-size:48px;margin-bottom:16px">🥕</div>
+      <h3 class="round-font" style="font-size:22px;color:var(--orange);margin-bottom:8px">신청 완료!</h3>
+      <p style="color:#444;font-size:15px;line-height:1.7">담당자가 빠르게 연락드릴게요.<br>카카오톡으로 먼저 연락 주셔도 됩니다.</p>
+      <a href="https://open.kakao.com/o/sskakd6d" target="_blank" class="btn btn-primary round-font" style="margin-top:24px;display:inline-flex">💬 카카오톡 상담</a>
+    </div>
   </div>
 </section>
 
@@ -714,6 +720,20 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       if(!wasOpen){item.classList.add('open');item.querySelector('.faq-ic').textContent='−'}
     });
   });
+  const applyForm = document.getElementById('applyForm');
+  if (applyForm) {
+    applyForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('applyBtn');
+      if (btn) { btn.textContent = '제출 중...'; btn.disabled = true; }
+      try {
+        await fetch(applyForm.action, { method: 'POST', body: new FormData(applyForm), headers: { Accept: 'application/json' } });
+      } catch (_) {}
+      applyForm.style.display = 'none';
+      const done = document.getElementById('applyDone');
+      if (done) done.style.display = 'block';
+    });
+  }
 </script>
 </body>
 </html>
