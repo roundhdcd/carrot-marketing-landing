@@ -728,8 +728,23 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       e.preventDefault();
       const btn = document.getElementById('applyBtn');
       if (btn) { btn.textContent = '제출 중...'; btn.disabled = true; }
+      const fd = new FormData(applyForm);
+      const fields = ['가게링크_계정명','가게이름','연락처','관심서비스','희망시작시기','희망기간'];
+      const discordPayload = {
+        embeds: [{
+          title: '🥕 당근부스트 무료 진단 신청',
+          color: 0xFF6F34,
+          fields: fields.map(k => ({ name: k, value: fd.get(k) || '—', inline: true })),
+          timestamp: new Date().toISOString()
+        }]
+      };
       try {
-        await fetch(applyForm.action, { method: 'POST', body: new FormData(applyForm), headers: { Accept: 'application/json' } });
+        await Promise.all([
+          fetch(applyForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } }),
+          fetch('https://discord.com/api/webhooks/1518469650042847272/jRKI-Jx2n4qPxaq7hcanTDNjUQRTuMKe7otdGU7HoWVVEsK-kw7CFh7baUg8kU5s6Iyd', {
+            method: 'POST', body: JSON.stringify(discordPayload), headers: { 'Content-Type': 'application/json' }
+          })
+        ]);
       } catch (_) {}
       applyForm.style.display = 'none';
       const done = document.getElementById('applyDone');
